@@ -1,0 +1,9 @@
+.left {
+  @apply w-1/3 bg-primary h-full flex flex-col justify-end whitespace-nowrap;
+}
+.name {
+  @apply text-4xl font-semibold;
+}
+.before {
+  @apply text-2xl tracking-wider;
+}
