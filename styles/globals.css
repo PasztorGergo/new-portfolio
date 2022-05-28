@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  @apply font-poppins;
+}
 header {
   @apply h-screen md:h-4/5 text-white;
+}
+.sectionTitle {
+  @apply font-semibold text-3xl uppercase text-text;
+}
+.section {
+  @apply grid grid-cols-6 md:grid-cols-12 px-4;
 }

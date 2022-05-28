@@ -1,3 +1,9 @@
 .about {
-  @apply py-8 px-4 w-full bg-zinc-300;
+  @apply py-8 w-full bg-zinc-300;
+}
+.title {
+  grid-column: 8/ 10;
+}
+.image {
+  grid-column: 1 / 3;
 }
