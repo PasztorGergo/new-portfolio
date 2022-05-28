@@ -1,9 +1,37 @@
+.header {
+  @apply grid md:grid-cols-12 grid-cols-6 h-screen;
+}
 .left {
-  @apply w-1/3 bg-primary h-full flex flex-col justify-end whitespace-nowrap;
+  @apply bg-primary h-full flex flex-col justify-evenly whitespace-nowrap pl-4 overflow-visible py-8 z-10;
+  grid-column: 1 / 3;
 }
 .name {
-  @apply text-4xl font-semibold;
+  @apply text-4xl font-semibold md:ml-16;
 }
 .before {
-  @apply text-2xl tracking-wider;
+  @apply text-2xl tracking-wider md:ml-16;
+}
+.right {
+  @apply flex flex-col bg-no-repeat bg-cover;
+  background-position-x: center;
+  grid-column: 3/ -1;
+  background-image: url("/images/Gergo.jpg");
+}
+.nav {
+  @apply flex items-center px-8 bg-text w-full h-20;
+}
+.navlinks {
+  @apply flex justify-end gap-x-12 items-center w-full;
+}
+.navlink {
+  @apply uppercase font-semibold text-base relative z-10;
+}
+.navlink::after {
+  @apply absolute w-full h-1/2 bg-primary bg-opacity-80 content-[""] bottom-0 left-0 z-[-1] scale-y-0 transition-transform origin-bottom;
+}
+.navlink:hover::after {
+  @apply scale-y-100;
+}
+.dots {
+  @apply justify-self-start;
 }

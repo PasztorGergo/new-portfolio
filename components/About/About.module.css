@@ -1,0 +1,3 @@
+.about {
+  @apply py-8 px-4 w-full bg-zinc-300;
+}
