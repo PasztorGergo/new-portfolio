@@ -1,9 +1,26 @@
 .about {
-  @apply py-8 w-full bg-zinc-300;
+  @apply py-8 w-full bg-zinc-300 place-items-center;
 }
 .title {
   grid-column: 8/ 10;
 }
-.image {
-  grid-column: 1 / 3;
+.Image {
+  @apply relative w-full h-full  bg-contain bg-center bg-no-repeat;
+  background-image: url("/images/GergoTyping.png");
+  margin: 3vw 0 0 3vw;
+}
+.circuit {
+  @apply w-48 h-48 bg-contain bg-center bg-no-repeat overflow-visible;
+  margin: 3vw 0 0 3vw;
+  background-image: url("/images/Circuit.png");
+  grid-column: 2/4;
+  grid-row: 1/-1;
+}
+.intro {
+  @apply w-full h-full text-xl text-text;
+  grid-column: 6/10;
+}
+.plus {
+  grid-column: 11/ -1;
+  grid-row: 1 / -1;
 }
