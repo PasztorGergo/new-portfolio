@@ -1,4 +1,4 @@
-import { About, Header, Projects } from "../components";
+import { About, Header, Projects, Footer } from "../components";
 
 export default function Home() {
   return (
