@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
+import Navigation from "../Navigation";
 import Style from "./Header.module.css";
 
 export default function Header() {
@@ -19,25 +19,7 @@ export default function Header() {
         </div>
       </div>
       <div className={Style.right}>
-        <nav className={Style.nav}>
-          <ul className={Style.navlinks}>
-            <li className={Style.navlink}>
-              <Link href="#about">
-                <a>About</a>
-              </Link>
-            </li>
-            <li className={Style.navlink}>
-              <Link href="#work">
-                <a>Projects</a>
-              </Link>
-            </li>
-            <li className={Style.navlink}>
-              <Link href="/blog">
-                <a>Blog</a>
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        <Navigation />
       </div>
     </header>
   );

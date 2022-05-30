@@ -23,3 +23,8 @@ header {
 #freshnews {
   background-image: url("/images/freshnews.png");
 }
+@media all and (max-width: 768px) {
+  #more {
+    grid-column: 3/5 !important;
+  }
+}

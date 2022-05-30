@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../Button";
 import WorkCard from "../WorkCard";
 import Style from "./Projects.module.css";
 
@@ -32,6 +33,9 @@ export default function Projects() {
           href="https://rapidapi.com/pasztorg05/api/fresh-news-unofficial-google-news/"
         />
       </ul>
+      <Button id="more" style={{ gridColumn: "6/8", marginTop: "10vh" }}>
+        More
+      </Button>
     </section>
   );
 }

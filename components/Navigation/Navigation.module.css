@@ -1,0 +1,18 @@
+.nav {
+  @apply flex items-center justify-end md:justify-start px-8 bg-text w-full h-20;
+}
+.navlinks {
+  @apply flex justify-end gap-x-12 items-center md:w-full w-0 invisible md:visible;
+}
+.navlink {
+  @apply uppercase font-semibold text-base relative z-10;
+}
+.navlink::after {
+  @apply absolute w-full h-1/2 bg-primary bg-opacity-80 content-[""] bottom-0 left-0 z-[-1] scale-y-0 transition-transform origin-bottom;
+}
+.navlink:hover::after {
+  @apply scale-y-100;
+}
+.bars {
+  @apply visible md:invisible text-2xl;
+}

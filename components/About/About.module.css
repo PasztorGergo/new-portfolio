@@ -1,8 +1,10 @@
 .about {
-  @apply py-8 w-full bg-zinc-300 place-items-center;
+  @apply py-8 w-full bg-zinc-300 content-center;
+  grid-template-columns: repeat(4, 1fr);
 }
 .title {
-  grid-column: 8/ 10;
+  @apply place-self-end;
+  grid-column: 6/8;
 }
 .Image {
   @apply relative w-full h-full  bg-contain bg-center bg-no-repeat;
@@ -10,17 +12,33 @@
   margin: 3vw 0 0 3vw;
 }
 .circuit {
-  @apply w-48 h-48 bg-contain bg-center bg-no-repeat overflow-visible;
-  margin: 3vw 0 0 3vw;
+  @apply w-48 h-48 bg-contain bg-center bg-no-repeat overflow-visible flex-grow-[0.3];
+  margin: 3vw 6vw 0 3vw;
   background-image: url("/images/Circuit.png");
-  grid-column: 2/4;
-  grid-row: 1/-1;
+  grid-column: 1/3;
+  grid-row: 1 / 2;
 }
 .intro {
-  @apply w-full h-full text-xl text-text;
-  grid-column: 6/10;
+  @apply w-full text-xl text-text;
 }
 .plus {
-  grid-column: 11/ -1;
-  grid-row: 1 / -1;
+  @apply justify-self-end;
+  grid-column: 11/-1;
+  grid-row: 1/-1;
+}
+.content {
+  @apply flex flex-col justify-between items-center max-w-[50%];
+  grid-column: 6/10;
+  grid-row: 1/ -1;
+}
+@media all and (max-width: 768px) {
+  .plus {
+    grid-row: 1/2;
+  }
+  .content {
+    @apply max-w-full place-self-center items-stretch;
+    margin-top: 10vh;
+    grid-column: 1/ 13;
+    grid-row: 2 / 3;
+  }
 }

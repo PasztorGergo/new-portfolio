@@ -1,5 +1,5 @@
 .footer {
-  @apply bg-text min-h-[30vh] py-8 text-white;
+  @apply bg-text min-h-[30vh] py-8 text-white relative;
 }
 .title {
   @apply text-white;
@@ -7,10 +7,10 @@
 }
 .dots {
   grid-column: 2 / 4;
-  @apply rotate-90 self-end;
+  @apply rotate-90 self-end absolute;
 }
 .rights {
-  @apply place-self-center self-end;
+  @apply place-self-center self-end whitespace-nowrap;
   grid-column: 6 / 8;
   grid-row: 2 / 3;
 }
@@ -24,4 +24,9 @@
 }
 .row {
   @apply absolute h-full top-0 left-0 right-0 mx-auto bg-white w-[1px];
+}
+@media all and (max-width: 768px) {
+  .rights {
+    grid-column: 2 / 4;
+  }
 }
