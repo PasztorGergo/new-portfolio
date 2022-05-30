@@ -8,7 +8,7 @@ export default function Header() {
     <header className={Style.header}>
       <div className={Style.left}>
         <Image
-          src="/images/dots.svg"
+          src="/images/Dots.svg"
           layout="fixed"
           width="100%"
           height="100%"

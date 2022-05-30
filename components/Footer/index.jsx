@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className={`${Style.footer} section`}>
       <h2 className={`${Style.title} sectionTitle`}>Contacts</h2>
-      <img src="/images/dots.svg" alt="dots" className={Style.dots} />
+      <img src="/images/Dots.svg" alt="dots" className={Style.dots} />
       <p className={Style.rights}>All rights reserved &copy;</p>
       <div className={Style.social}>
         <div className={Style.row}></div>
