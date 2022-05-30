@@ -5,7 +5,7 @@ import Button from "../Button";
 
 export default function About() {
   return (
-    <section className={`${Style.about} section`}>
+    <section className={`${Style.about} section`} id="about">
       <div className={Style.circuit}>
         <div className={Style.Image}></div>
       </div>
@@ -15,7 +15,7 @@ export default function About() {
           I’m a full stack webdeveloper & an entreprenuer, who searches for
           modern solutions.
         </p>
-        <Button href="" style={{ alignSelf: "start" }}>
+        <Button href="/about" style={{ alignSelf: "start", marginTop: "2rem" }}>
           Learn More
         </Button>
       </div>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-  @apply font-poppins;
+  @apply font-poppins scroll-smooth;
 }
 header {
   @apply h-screen md:h-4/5 text-white;

@@ -5,7 +5,7 @@ import Style from "./Projects.module.css";
 
 export default function Projects() {
   return (
-    <section className={`${Style.Projects} section`}>
+    <section className={`${Style.Projects} section`} id="work">
       <h2 className={`${Style.title} sectionTitle`}>My Work</h2>
       <h3 className={Style.subtitle}>That I proud of</h3>
       <ul className={Style.display}>
@@ -33,7 +33,11 @@ export default function Projects() {
           href="https://rapidapi.com/pasztorg05/api/fresh-news-unofficial-google-news/"
         />
       </ul>
-      <Button id="more" style={{ gridColumn: "6/8", marginTop: "10vh" }}>
+      <Button
+        href="/projects"
+        id="more"
+        style={{ gridColumn: "6/8", marginTop: "10vh" }}
+      >
         More
       </Button>
     </section>
