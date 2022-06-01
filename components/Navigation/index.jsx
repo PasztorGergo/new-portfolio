@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Style from "./Navigation.module.css";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faHouse, faTimes } from "@fortawesome/free-solid-svg-icons";
 
-export default function Navigation() {
+export default function Navigation({ home }) {
   const [closed, setClosed] = useState(true);
   return (
     <nav className={`${Style.nav} ${closed ? "h-20" : "h-48"}`}>
@@ -25,21 +25,31 @@ export default function Navigation() {
             <FontAwesomeIcon icon={faTimes} />
           </li>
         )}
-        <li className={Style.navlink}>
-          <Link href="#about">
-            <a>About</a>
-          </Link>
-        </li>
-        <li className={Style.navlink}>
-          <Link href="#work">
-            <a>Projects</a>
-          </Link>
-        </li>
-        <li className={Style.navlink}>
-          <Link href="/blog">
-            <a>Blog</a>
-          </Link>
-        </li>
+        {home ? (
+          <>
+            <li className={Style.navlink}>
+              <Link href="#about">
+                <a>About</a>
+              </Link>
+            </li>
+            <li className={Style.navlink}>
+              <Link href="#work">
+                <a>Projects</a>
+              </Link>
+            </li>
+            <li className={Style.navlink}>
+              <Link href="/blog">
+                <a>Blog</a>
+              </Link>
+            </li>
+          </>
+        ) : (
+          <li className={Style.navlink}>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+          </li>
+        )}
       </ul>
     </nav>
   );

@@ -7,7 +7,7 @@
   grid-column: 6/8;
 }
 .Image {
-  @apply relative w-full h-full  bg-contain bg-center bg-no-repeat;
+  @apply relative w-full h-full  bg-contain bg-center bg-no-repeat saturate-0 hover:saturate-100 transition-all duration-300;
   background-image: url("/images/GergoTyping.png");
   margin: 3vw 0 0 3vw;
 }

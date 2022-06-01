@@ -3,7 +3,7 @@ import React from "react";
 import Navigation from "../Navigation";
 import Style from "./Header.module.css";
 
-export default function Header() {
+export default function Header({ title, subTitle, home }) {
   return (
     <header className={Style.header}>
       <div className={Style.left}>
@@ -14,12 +14,12 @@ export default function Header() {
           height="100%"
         />
         <div>
-          <h2 className={Style.before}>My name is</h2>
-          <h1 className={Style.name}>Gergő Pásztor</h1>
+          <h2 className={Style.before}>{subTitle}</h2>
+          <h1 className={Style.name}>{title}</h1>
         </div>
       </div>
       <div className={Style.right}>
-        <Navigation />
+        <Navigation home={home} />
       </div>
     </header>
   );

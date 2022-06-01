@@ -1,0 +1,9 @@
+.card {
+  @apply bg-white w-56 h-56 text-text flex flex-col items-center justify-evenly p-4 text-left;
+}
+.title {
+  @apply text-base uppercase font-semibold;
+}
+.list {
+  @apply list-disc pl-2 text-base;
+}

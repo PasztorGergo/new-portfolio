@@ -1,14 +1,13 @@
-import { About, Header, Projects, Footer } from "../components";
+import { About, Header, Projects } from "../components";
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <Header title="Gergő Pásztor" home subTitle="My name is" />
       <main>
         <About />
         <Projects />
       </main>
-      <Footer />
     </>
   );
 }
