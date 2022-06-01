@@ -51,7 +51,7 @@ export default function about() {
             Over and above, I like to participate in competitions and while away
             with my friends and family.
           </p>
-          <img src="/images/plus.svg" className={Style.plus} />
+          <img src="/images/Plus.svg" className={Style.plus} />
         </section>
         <section className={`${Style.section} section`}>
           <h2 className={`${Style.title} sectionTitle`}>Skills</h2>
