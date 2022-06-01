@@ -18,7 +18,7 @@ export default function about() {
       <main>
         <section className={`${Style.section} section`}>
           <p className={Style.parag}>
-            I was born in Győr, Hungary, and I'm studying at{" "}
+            I was born in Győr, Hungary, and I&apos;m studying at{" "}
             <a
               href="https://gyor-pattantyus.www.intezmeny.edir.hu/"
               hrefLang="hu"
@@ -41,11 +41,11 @@ export default function about() {
             <Link href="https://gyor-pattantyus.www.intezmeny.edir.hu/">
               <a>masterpieces</a>
             </Link>{" "}
-            for my customers, and I'm still creating software products.
+            for my customers, and I&apos;m still creating software products.
           </p>
           <p>
             In my opinion, uniting with others is an exceptional experience.
-            That's why I usually offer my support.
+            That&apos;s why I usually offer my support.
           </p>
           <p>
             Over and above, I like to participate in competitions and while away
