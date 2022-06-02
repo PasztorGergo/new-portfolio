@@ -15,6 +15,7 @@ export default function Projects() {
                 Make engrossing pictures of your code. Codisplay is a code
                 snippet editor."
           href="https://codisplay.vercel.app/"
+          image="/images/codisplay-thumbnail.png"
         />
         <WorkCard
           title="Sunnier"
@@ -24,6 +25,7 @@ export default function Projects() {
           rain.
         "
           href="https://weather-application-pasztorgergo.vercel.app/"
+          image="/images/weatherapp.png"
         />
         <WorkCard
           title="Fresh News"
@@ -31,6 +33,7 @@ export default function Projects() {
           Fresh News is an unofficial Google News API. Get the top headlines with the publish dates and the providers. Search by country, or by title.
         "
           href="https://rapidapi.com/pasztorg05/api/fresh-news-unofficial-google-news/"
+          image="/images/freshnews.png"
         />
       </ul>
       <Button
