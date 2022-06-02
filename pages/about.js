@@ -38,7 +38,7 @@ export default function about() {
         <section className={`${Style.section} section`}>
           <p>
             I have built several{" "}
-            <Link href="https://gyor-pattantyus.www.intezmeny.edir.hu/">
+            <Link href="/projects">
               <a>masterpieces</a>
             </Link>{" "}
             for my customers, and I&apos;m still creating software products.

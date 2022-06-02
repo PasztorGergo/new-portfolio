@@ -1,0 +1,9 @@
+.title {
+  grid-column: 1/13;
+  grid-row: 1/2;
+}
+.parag {
+  @apply text-text text-center;
+  grid-column: 1/13;
+  grid-row: 2/3;
+}
