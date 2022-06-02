@@ -12,6 +12,7 @@ export default function Header({ title, subTitle, home }) {
           layout="fixed"
           width="100%"
           height="100%"
+          alt="dots"
         />
         <div>
           <h2 className={Style.before}>{subTitle}</h2>

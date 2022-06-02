@@ -5,9 +5,13 @@ import Button from "../Button";
 
 export default function About() {
   return (
-    <section className={`${Style.about} section`} id="about">
+    <section
+      aria-details="about"
+      className={`${Style.about} section`}
+      id="about"
+    >
       <div className={Style.circuit}>
-        <div className={Style.Image}></div>
+        <div title="Gergő at a competition" className={Style.Image}></div>
       </div>
       <div className={Style.content}>
         <h2 className={`${Style.title} sectionTitle`}>About</h2>

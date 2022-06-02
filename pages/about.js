@@ -12,6 +12,12 @@ export default function about() {
   return (
     <>
       <Head>
+        <meta name="description" content="More about Gergő Pásztor" />
+        <meta property="og:title" content="About Gergő" />
+        <meta
+          property="og:description"
+          content="Learn morea bout GErgő's life."
+        />
         <title>About | Gergő Pásztor</title>
       </Head>
       <Header title="I'm Gergő Pásztor" subTitle="Hi!" />

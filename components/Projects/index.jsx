@@ -5,7 +5,11 @@ import Style from "./Projects.module.css";
 
 export default function Projects() {
   return (
-    <section className={`${Style.Projects} section`} id="work">
+    <section
+      aria-details="projects"
+      className={`${Style.Projects} section`}
+      id="work"
+    >
       <h2 className={`${Style.title} sectionTitle`}>My Work</h2>
       <h3 className={Style.subtitle}>That I proud of</h3>
       <ul className={Style.display}>

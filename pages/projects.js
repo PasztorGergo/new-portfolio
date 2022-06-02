@@ -4,10 +4,16 @@ import sectionStyle from "../styles/About.module.css";
 import displayStyle from "../components/Projects/Projects.module.css";
 import Style from "../styles/Projects.module.css";
 import { Header } from "../components";
+import Head from "next/head";
 
 export default function projects({ projects }) {
   return (
     <>
+      <Head>
+        <meta name="description" content="Gergő Pásztor's work" />
+        <meta property="og:title" content="Gergő Pásztor's work" />
+        <title>Projects | Gergő Pásztor</title>
+      </Head>
       <Header title="Projects" subTitle="Realized & WIP" />
       <main>
         <section className={`${sectionStyle.section} section`}>
