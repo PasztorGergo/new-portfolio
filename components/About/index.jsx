@@ -16,7 +16,7 @@ export default function About() {
       <div className={Style.content}>
         <h2 className={`${Style.title} sectionTitle`}>About</h2>
         <p className={Style.intro}>
-          I’m a full stack webdeveloper & an entreprenuer, who searches for
+          I&apos;m a full stack webdeveloper & an entreprenuer, who searches for
           modern solutions.
         </p>
         <Button href="/about" style={{ alignSelf: "start", marginTop: "2rem" }}>

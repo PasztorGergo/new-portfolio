@@ -19,7 +19,8 @@ export default function projects({ projects }) {
         <section className={`${sectionStyle.section} section`}>
           <h2 className={`${Style.title} sectionTitle`}>Projects</h2>
           <p className={Style.parag}>
-            Here you can view my work, that I have created, and I'm building.
+            Here you can view my work, that I have created, and I&apos;m
+            building.
           </p>
           <ul className={displayStyle.display}>
             <WorkCard
