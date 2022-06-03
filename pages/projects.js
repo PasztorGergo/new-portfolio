@@ -5,8 +5,11 @@ import displayStyle from "../components/Projects/Projects.module.css";
 import Style from "../styles/Projects.module.css";
 import { Header } from "../components";
 import Head from "next/head";
+import Work from "../models/workModel";
+import { connectDB } from "../lib/Projects";
 
-export default function projects({ projects }) {
+export default function projects({ ProjectsArray }) {
+  console.log(ProjectsArray);
   return (
     <>
       <Head>
@@ -23,35 +26,33 @@ export default function projects({ projects }) {
             building.
           </p>
           <ul className={displayStyle.display}>
-            <WorkCard
-              title="Codisplay"
-              desc="
-                Make engrossing pictures of your code. Codisplay is a code
-                snippet editor."
-              href="https://codisplay.vercel.app/"
-              image="/images/codisplay-thumbnail.png"
-            />
-            <WorkCard
-              title="Sunnier"
-              desc="
-          Sunnier is a basic weather application. Change your location,
-          see the forecast 3 days in advance, and pay attention to the
-          rain.
-        "
-              href="https://weather-application-pasztorgergo.vercel.app/"
-              image="/images/weatherapp.png"
-            />
-            <WorkCard
-              title="Fresh News"
-              desc="
-          Fresh News is an unofficial Google News API. Get the top headlines with the publish dates and the providers. Search by country, or by title.
-        "
-              href="https://rapidapi.com/pasztorg05/api/fresh-news-unofficial-google-news/"
-              image="/images/freshnews.png"
-            />
+            {ProjectsArray.map(({ title, description, href, image }) => (
+              <WorkCard
+                title={title}
+                desc={description}
+                href={href}
+                image={image}
+              />
+            ))}
           </ul>
         </section>
       </main>
     </>
   );
+}
+
+export async function getStaticProps() {
+  try {
+    await connectDB();
+
+    const ProjectsArray = await Work.find({});
+
+    return {
+      props: {
+        ProjectsArray: JSON.parse(JSON.stringify(ProjectsArray)),
+      },
+    };
+  } catch (error) {
+    console.error(error);
+  }
 }
