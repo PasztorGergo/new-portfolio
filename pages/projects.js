@@ -9,7 +9,6 @@ import Work from "../models/workModel";
 import { connectDB } from "../lib/Projects";
 
 export default function projects({ ProjectsArray }) {
-  console.log(ProjectsArray);
   return (
     <>
       <Head>
@@ -26,12 +25,13 @@ export default function projects({ ProjectsArray }) {
             building.
           </p>
           <ul className={displayStyle.display}>
-            {ProjectsArray.map(({ title, description, href, image }) => (
+            {ProjectsArray.map(({ _id, title, description, href, image }) => (
               <WorkCard
+                key={_id}
                 title={title}
                 desc={description}
                 href={href}
-                image={image}
+                image={`${Buffer.from(image).toString()}`}
               />
             ))}
           </ul>

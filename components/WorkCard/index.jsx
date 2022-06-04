@@ -7,9 +7,7 @@ export default function WorkCard({ title, desc, href, image }) {
       className={`${Style.card}`}
       id={title.toLowerCase().replace(" ", "")}
       style={{
-        backgroundImage: `url("data:image/png;base64,${Buffer.from(
-          image.data
-        )}")`,
+        backgroundImage: `url("${image}")`,
       }}
     >
       <a className={`${Style.cardLink}`} href={href}>
