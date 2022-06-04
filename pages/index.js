@@ -1,7 +1,9 @@
 import { About, Header, Projects } from "../components";
 import Head from "next/head";
+import { connectDB } from "../lib/Projects";
+import Work from "../models/workModel";
 
-export default function Home() {
+export default function Home({ ProjectsArray }) {
   return (
     <>
       <Head>
@@ -16,8 +18,24 @@ export default function Home() {
       <Header title="Gergő Pásztor" home subTitle="My name is" />
       <main>
         <About />
-        <Projects />
+        <Projects ProjectsArray={ProjectsArray} />
       </main>
     </>
   );
+}
+
+export async function getStaticProps() {
+  try {
+    await connectDB();
+
+    const ProjectsArray = await Work.find({});
+
+    return {
+      props: {
+        ProjectsArray: JSON.parse(JSON.stringify(ProjectsArray)),
+      },
+    };
+  } catch (error) {
+    console.error(error);
+  }
 }

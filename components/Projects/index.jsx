@@ -3,7 +3,7 @@ import Button from "../Button";
 import WorkCard from "../WorkCard";
 import Style from "./Projects.module.css";
 
-export default function Projects() {
+export default function Projects({ ProjectsArray }) {
   return (
     <section
       aria-details="projects"
@@ -13,32 +13,15 @@ export default function Projects() {
       <h2 className={`${Style.title} sectionTitle`}>My Work</h2>
       <h3 className={Style.subtitle}>That I proud of</h3>
       <ul className={Style.display}>
-        <WorkCard
-          title="Codisplay"
-          desc="
-                Make engrossing pictures of your code. Codisplay is a code
-                snippet editor."
-          href="https://codisplay.vercel.app/"
-          image="/images/codisplay-thumbnail.png"
-        />
-        <WorkCard
-          title="Sunnier"
-          desc="
-          Sunnier is a basic weather application. Change your location,
-          see the forecast 3 days in advance, and pay attention to the
-          rain.
-        "
-          href="https://weather-application-pasztorgergo.vercel.app/"
-          image="/images/weatherapp.png"
-        />
-        <WorkCard
-          title="Fresh News"
-          desc="
-          Fresh News is an unofficial Google News API. Get the top headlines with the publish dates and the providers. Search by country, or by title.
-        "
-          href="https://rapidapi.com/pasztorg05/api/fresh-news-unofficial-google-news/"
-          image="/images/freshnews.png"
-        />
+        {ProjectsArray.map(({ _id, title, description, href, image }) => (
+          <WorkCard
+            key={_id}
+            title={title}
+            desc={description}
+            href={href}
+            image={`${Buffer.from(image).toString()}`}
+          />
+        ))}
       </ul>
       <Button
         href="/projects"
