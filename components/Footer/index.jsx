@@ -12,13 +12,16 @@ export default function Footer() {
       <p className={Style.rights}>All rights reserved &copy;</p>
       <div className={Style.social}>
         <div className={Style.row}></div>
-        <a href="https://twitter.com/G3rgoPasztor">
+        <a href="https://twitter.com/G3rgoPasztor" className={Style.twitter}>
           <FontAwesomeIcon className="text-2xl" icon={faTwitter} />
         </a>
-        <a href="https://www.linkedin.com/in/gerg%C5%91-p%C3%A1sztor-a0aa41214/">
+        <a
+          href="https://www.linkedin.com/in/gerg%C5%91-p%C3%A1sztor-a0aa41214/"
+          className={Style.linkedin}
+        >
           <FontAwesomeIcon className="text-2xl" icon={faLinkedinIn} />
         </a>
-        <a href="mailto:pasztorg05@gmail.com">
+        <a href="mailto:pasztorg05@gmail.com" className={Style.mail}>
           <FontAwesomeIcon className="text-2xl" icon={faAt} />
         </a>
       </div>

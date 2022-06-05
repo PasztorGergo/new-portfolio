@@ -1,0 +1,9 @@
+.ribbonHolder {
+  @apply flex flex-col items-center justify-between text-center gap-2;
+}
+.ribbon {
+  @apply relative rounded-full p-6 aspect-square grid place-items-center shadow-inner text-white text-xl text-opacity-70 font-semibold;
+}
+.branch {
+  @apply absolute inset-0 scale-125;
+}
