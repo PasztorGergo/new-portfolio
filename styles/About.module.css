@@ -1,9 +1,6 @@
 .section {
   @apply py-8 place-items-center md:text-center relative overflow-hidden;
 }
-.section:nth-child(odd) {
-  @apply bg-zinc-300;
-}
 .parag:first-child {
   grid-column: 2/4;
 }

@@ -1,9 +1,10 @@
-import { About, Header, Projects } from "../components";
+import { About, Awards, Header, Projects } from "../components";
 import Head from "next/head";
 import { connectDB } from "../lib/Projects";
 import Work from "../models/workModel";
+import Award from "../models/awardModel";
 
-export default function Home({ ProjectsArray }) {
+export default function Home({ ProjectsArray, AwardsArray }) {
   return (
     <>
       <Head>
@@ -19,6 +20,7 @@ export default function Home({ ProjectsArray }) {
       <main>
         <About />
         <Projects ProjectsArray={ProjectsArray} />
+        <Awards awards={AwardsArray} />
       </main>
     </>
   );
@@ -29,10 +31,12 @@ export async function getStaticProps() {
     await connectDB();
 
     const ProjectsArray = await Work.find({});
+    const Awards = await Award.find({});
 
     return {
       props: {
         ProjectsArray: JSON.parse(JSON.stringify(ProjectsArray)),
+        AwardsArray: JSON.parse(JSON.stringify(Awards)),
       },
     };
   } catch (error) {
