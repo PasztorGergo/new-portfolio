@@ -38,7 +38,7 @@ export default function Navigation({ home }) {
               </Link>
             </li>
             <li className={Style.navlink}>
-              <Link href="/blog">
+              <Link href="/posts">
                 <a>Blog</a>
               </Link>
             </li>

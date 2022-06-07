@@ -1,0 +1,29 @@
+.postHolder {
+  @apply grid grid-cols-6 place-items-center h-screen;
+}
+.header {
+  @apply flex flex-col items-center justify-evenly w-full py-12 gap-y-2;
+}
+.header h1 {
+  @apply text-text text-3xl font-semibold;
+}
+.post {
+  @apply text-text text-left w-full h-full;
+  grid-column: 2/6;
+  grid-row: 1/2;
+}
+.link {
+  @apply uppercase font-semibold text-base;
+  text-decoration: none;
+  background-image: linear-gradient(to right, #02c39a, #05668d 130%);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 0.15rem;
+  transition: background-size cubic-bezier(0, 0.5, 0, 1) 0.3s;
+  grid-row: 2/3;
+  grid-column: 5/7;
+}
+.link:hover {
+  text-decoration: none;
+  background-size: 100% 0.15rem;
+}
