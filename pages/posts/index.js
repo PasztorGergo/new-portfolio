@@ -29,8 +29,8 @@ export default function Blog({ PostsArray }) {
                     </a>
                   </Link>
                   <div className={Style.badgeContainer}>
-                    {categories.map((category) => (
-                      <Badge>{category}</Badge>
+                    {categories.map((category, i) => (
+                      <Badge key={i}>{category}</Badge>
                     ))}
                   </div>
                 </article>
@@ -49,8 +49,8 @@ export default function Blog({ PostsArray }) {
                     </a>
                   </Link>
                   <div className={Style.badgeContainer}>
-                    {categories.map((category) => (
-                      <Badge>{category}</Badge>
+                    {categories.map((category, i) => (
+                      <Badge key={i}>{category}</Badge>
                     ))}
                   </div>
                 </article>
