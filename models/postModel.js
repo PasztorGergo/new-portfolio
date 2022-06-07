@@ -5,6 +5,7 @@ const postSchema = new Schema({
   title: String,
   content_id: String,
   date: Date,
+  categories: Array,
 });
 
 const Post = models ? models.Post || model("Post", postSchema) : undefined;

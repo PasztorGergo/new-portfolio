@@ -5,3 +5,4 @@ export { default as Footer } from "./Footer";
 export { default as SkillCard } from "./SkillCard";
 export { default as Awards } from "./Awards";
 export { default as DateParser } from "./DateParser";
+export { default as Badge } from "./Badge";

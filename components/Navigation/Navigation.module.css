@@ -5,7 +5,7 @@
   @apply flex flex-col h-full md:flex-row gap-x-12 gap-y-3 md:items-center items-end md:justify-end;
 }
 .navlink {
-  @apply uppercase font-semibold text-base relative z-10 flex items-center;
+  @apply uppercase font-semibold text-base relative z-10 flex items-center text-white;
 }
 .navlink::after {
   @apply absolute w-full h-1/2 bg-primary bg-opacity-80 content-[""] bottom-0 left-0 z-[-1] scale-y-0 transition-transform origin-bottom;
