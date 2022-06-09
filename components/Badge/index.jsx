@@ -1,8 +1,12 @@
 import React from "react";
+import { useBadge } from "../../Hooks/CategoryContext";
 import Style from "./Badge.module.css";
 
 export default function Badge({ children }) {
-  const handleClick = () => {};
+  const { setCategories } = useBadge();
+  const handleClick = () => {
+    setCategories((prev) => prev.push(children));
+  };
   return (
     <div
       aria-label="badge"
