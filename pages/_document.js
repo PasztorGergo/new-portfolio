@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <meta name="robots" content="index" />
         <link rel="icon" href="/images/favicon.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

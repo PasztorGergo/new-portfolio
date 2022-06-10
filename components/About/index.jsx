@@ -19,7 +19,11 @@ export default function About() {
           I&apos;m a full stack webdeveloper & an entreprenuer, who searches for
           modern solutions.
         </p>
-        <Button href="/about" style={{ alignSelf: "start", marginTop: "2rem" }}>
+        <Button
+          ariaLabel="More about Gergő Pásztor"
+          href="/about"
+          style={{ alignSelf: "start", marginTop: "2rem" }}
+        >
           Learn More
         </Button>
       </div>

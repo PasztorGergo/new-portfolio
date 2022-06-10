@@ -6,7 +6,7 @@ import Style from "./Projects.module.css";
 export default function Projects({ ProjectsArray }) {
   return (
     <section
-      aria-details="projects"
+      aria-label="projects"
       className={`${Style.Projects} section`}
       id="work"
     >
@@ -24,6 +24,7 @@ export default function Projects({ ProjectsArray }) {
         ))}
       </ul>
       <Button
+        ariaLabel="See more projects from Gergő"
         href="/projects"
         id="more"
         style={{ gridColumn: "6/8", marginTop: "10vh" }}
