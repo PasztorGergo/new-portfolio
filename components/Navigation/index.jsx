@@ -10,7 +10,9 @@ export default function Navigation({ home }) {
     <nav className={`${Style.nav} ${closed ? "h-20" : "h-48"}`}>
       <FontAwesomeIcon
         icon={faBars}
-        className={`${Style.bars} ${closed ? "visible" : "invisible"}`}
+        className={`${Style.bars} ${closed ? "visible" : "invisible"} ${
+          Style.navlink
+        }`}
         onClick={() => setClosed((prev) => !prev)}
       />
       <ul
@@ -21,7 +23,7 @@ export default function Navigation({ home }) {
         } md:visible`}
       >
         {!closed && (
-          <li onClick={() => setClosed(true)}>
+          <li className={Style.navlink} onClick={() => setClosed(true)}>
             <FontAwesomeIcon icon={faTimes} />
           </li>
         )}
