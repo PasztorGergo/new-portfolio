@@ -21,7 +21,14 @@ export default function Blog({ PostsArray }) {
           {PostsArray.map(
             ({ _id, title, date, content_id, categories }, indx) =>
               indx % 2 == 1 && (
-                <article key={_id} className={Style.post}>
+                <article
+                  key={_id}
+                  className={`${Style.post}  ${categories
+                    .toString()
+                    .toLowerCase()
+                    .replace(" ", "-")
+                    .replace(",", " ")}`}
+                >
                   <Link href={`/posts/${content_id}`}>
                     <a>
                       <h4>{title}</h4>
@@ -41,7 +48,14 @@ export default function Blog({ PostsArray }) {
           {PostsArray.map(
             ({ _id, title, date, content_id, categories }, indx) =>
               indx % 2 == 0 && (
-                <article key={_id} className={Style.post}>
+                <article
+                  key={_id}
+                  className={`${Style.post} ${categories
+                    .toString()
+                    .toLowerCase()
+                    .replace(" ", "-")
+                    .replace(",", " ")}`}
+                >
                   <Link href={`/posts/${content_id}`}>
                     <a>
                       <h4>{title}</h4>
