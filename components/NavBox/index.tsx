@@ -4,20 +4,26 @@ import { createStyles } from "@mantine/core";
 
 const useStyle = createStyles((theme) => ({
   triangle: {
-    clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
-    background: theme.colors.lime[3],
+    background: theme.colors.blue[4],
     aspectRatio: "1/1",
     width: "1.25rem",
+    position: "relative",
+  },
+  text: {
+    position: "absolute",
+    left: "100%",
+    top: 0,
+    height: "100%",
   },
 }));
 
-export default function NavBox({ href }: any) {
+export default function NavBox({ href, children }: any) {
   const { classes } = useStyle();
   return (
     <div className={classes.triangle}>
-      <Link href={`#${{ href }}`}>
-        <a></a>
-      </Link>
+      <a href={`#${href}`} className={classes.text}>
+        {children}
+      </a>
     </div>
   );
 }

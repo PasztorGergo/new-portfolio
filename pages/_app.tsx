@@ -1,13 +1,28 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { AppShell } from "@mantine/core";
-import { Footer, Navigation } from "../components";
+import { AppShell, Global } from "@mantine/core";
+import { Footer, Header, Navigation } from "../components";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <AppShell navbar={<Navigation />} footer={<Footer />}>
-      <Component {...pageProps} />
-    </AppShell>
+    <>
+      <Global
+        styles={(theme) => ({
+          "*": {
+            fontFamily: "'Inter', sans-serif !important",
+            color: "#fff",
+            background: "#1c1d22",
+          },
+          a: {
+            padding: "0.1rem",
+            textDecoration: "none",
+          },
+        })}
+      />
+      <AppShell footer={<Footer />} header={<Header />}>
+        <Component {...pageProps} />
+      </AppShell>
+    </>
   );
 }
 

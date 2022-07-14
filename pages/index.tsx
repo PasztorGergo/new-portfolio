@@ -1,9 +1,7 @@
 import { NextPage } from "next";
-import { Title, Group, Text, Stack, Button } from "@mantine/core";
-import { IconBrandTwitter } from "@tabler/icons";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { Title, Group, Text, Stack, Button, Box } from "@mantine/core";
 import Head from "next/head";
+import { Hero } from "../components";
 
 const Home: NextPage = () => {
   return (
@@ -11,6 +9,15 @@ const Home: NextPage = () => {
       <Head>
         <title>Portfolio | Gergő Pásztor</title>
       </Head>
+      <Box
+        sx={{
+          padding: "0 clamp(0.01rem, 7rem, 7rem)",
+          margin: "0",
+          height: "100vh",
+        }}
+      >
+        <Hero />
+      </Box>
     </>
   );
 };
