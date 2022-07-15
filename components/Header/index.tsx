@@ -80,11 +80,14 @@ export default function Header() {
               onClick={() => scrollTo({ y: 0 })}
               className={classes.link}
               sx={{
-                borderBottom: scrollPos.y <= 0 ? "2px solid #00B25A" : "none",
-                opacity: scrollPos.y <= 0 ? 1 : 0.6,
+                borderBottom:
+                  scrollPos.y <= 1500 && scrollPos.y > 1000
+                    ? "2px solid #00B25A"
+                    : "none",
+                opacity: scrollPos.y <= 1500 && scrollPos.y > 1000 ? 1 : 0.6,
               }}
             >
-              Projects
+              Skills
             </UnstyledButton>
             <UnstyledButton
               onClick={() => scrollTo({ y: 0 })}
@@ -94,7 +97,7 @@ export default function Header() {
                 opacity: scrollPos.y <= 0 ? 1 : 0.6,
               }}
             >
-              Skills
+              Projects
             </UnstyledButton>
             <UnstyledButton
               onClick={() => scrollTo({ y: 0 })}

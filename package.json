@@ -12,11 +12,11 @@
     "@mantine/core": "^4.2.12",
     "@mantine/hooks": "^4.2.12",
     "@mantine/next": "^4.2.12",
-    "@tabler/icons": "^1.74.0",
     "framer-motion": "^6.4.3",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.4.0",
     "react-intersection-observer": "^9.3.5"
   },
   "devDependencies": {

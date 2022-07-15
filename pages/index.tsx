@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import { Title, Group, Text, Stack, Button, Box } from "@mantine/core";
 import Head from "next/head";
-import { About, Hero } from "../components";
+import { About, Hero, Skills } from "../components";
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +18,7 @@ const Home: NextPage = () => {
       >
         <Hero />
         <About />
+        <Skills />
       </Box>
     </>
   );
