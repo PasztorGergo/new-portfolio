@@ -17,7 +17,7 @@ const useStyles = createStyles((theme) => ({
   },
   header: {
     border: "none",
-    background: "transparent",
+    background: "#1c1d22",
   },
   link: {
     color: "#fff",
@@ -32,7 +32,7 @@ export default function Header() {
 
   const { classes } = useStyles();
   return (
-    <H fixed className={classes.header} height="20vh" py="lg">
+    <H fixed className={classes.header} height="min-content" py="lg">
       <Group
         align="center"
         position="apart"
@@ -57,18 +57,21 @@ export default function Header() {
               onClick={() => scrollTo({ y: 0 })}
               className={classes.link}
               sx={{
-                borderBottom: scrollPos.y <= 400 ? "2px solid #00B25A" : "none",
-                opacity: scrollPos.y <= 400 ? 1 : 0.6,
+                borderBottom: scrollPos.y <= 350 ? "2px solid #00B25A" : "none",
+                opacity: scrollPos.y <= 350 ? 1 : 0.6,
               }}
             >
               Home
             </UnstyledButton>
             <UnstyledButton
-              onClick={() => scrollTo({ y: 0 })}
+              onClick={() => scrollTo({ y: 600 })}
               className={classes.link}
               sx={{
-                borderBottom: scrollPos.y >= 0 ? "2px solid #00B25A" : "none",
-                opacity: scrollPos.y >= 0 ? 1 : 0.6,
+                borderBottom:
+                  scrollPos.y <= 1000 && scrollPos.y > 350
+                    ? "2px solid #00B25A"
+                    : "none",
+                opacity: scrollPos.y <= 1000 && scrollPos.y > 350 ? 1 : 0.6,
               }}
             >
               About
@@ -77,8 +80,8 @@ export default function Header() {
               onClick={() => scrollTo({ y: 0 })}
               className={classes.link}
               sx={{
-                borderBottom: scrollPos.y >= 0 ? "2px solid #00B25A" : "none",
-                opacity: scrollPos.y >= 0 ? 1 : 0.6,
+                borderBottom: scrollPos.y <= 0 ? "2px solid #00B25A" : "none",
+                opacity: scrollPos.y <= 0 ? 1 : 0.6,
               }}
             >
               Projects
@@ -87,8 +90,8 @@ export default function Header() {
               onClick={() => scrollTo({ y: 0 })}
               className={classes.link}
               sx={{
-                borderBottom: scrollPos.y >= 0 ? "2px solid #00B25A" : "none",
-                opacity: scrollPos.y >= 0 ? 1 : 0.6,
+                borderBottom: scrollPos.y <= 0 ? "2px solid #00B25A" : "none",
+                opacity: scrollPos.y <= 0 ? 1 : 0.6,
               }}
             >
               Skills
@@ -97,8 +100,8 @@ export default function Header() {
               onClick={() => scrollTo({ y: 0 })}
               className={classes.link}
               sx={{
-                borderBottom: scrollPos.y >= 0 ? "2px solid #00B25A" : "none",
-                opacity: scrollPos.y >= 0 ? 1 : 0.6,
+                borderBottom: scrollPos.y <= 0 ? "2px solid #00B25A" : "none",
+                opacity: scrollPos.y <= 0 ? 1 : 0.6,
               }}
             >
               Contact

@@ -11,7 +11,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           "*": {
             fontFamily: "'Inter', sans-serif !important",
             color: "#fff",
-            background: "#1c1d22",
           },
           a: {
             padding: "0.1rem",

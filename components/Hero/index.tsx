@@ -1,5 +1,13 @@
 import React, { useEffect } from "react";
-import { createStyles, Title, Text, Avatar, Group, Box } from "@mantine/core";
+import {
+  createStyles,
+  Title,
+  Text,
+  Avatar,
+  Group,
+  Box,
+  Button,
+} from "@mantine/core";
 import { motion, useAnimation } from "framer-motion";
 
 const useStyles = createStyles((theme) => ({
@@ -24,11 +32,19 @@ export default function Hero() {
   const controls = useAnimation();
 
   useEffect(() => {
-    controls.start((num: number) => ({
-      opacity: 1,
-      x: 0,
-      transition: { delay: 0.3 * num, duration: 1, type: "spring" },
-    }));
+    controls.start((num: number) =>
+      num < 6
+        ? {
+            opacity: 1,
+            x: 0,
+            transition: { delay: 0.3 * num, duration: 1, type: "spring" },
+          }
+        : {
+            opacity: 1,
+            y: 0,
+            transition: { delay: 0.3 * num, duration: 1, type: "spring" },
+          }
+    );
   }, []);
 
   return (
@@ -56,7 +72,24 @@ export default function Hero() {
             initial={{ opacity: 0, x: "-100%" }}
             animate={controls}
           >
-            <Text>I create websites, and build applications</Text>
+            <Text>I create unique websites, and applications.</Text>
+          </motion.div>
+          <motion.div
+            custom={6}
+            initial={{ opacity: 0, y: "100%" }}
+            animate={controls}
+            style={{ marginTop: "2rem" }}
+          >
+            <Button
+              sx={(theme) => ({
+                background: "#00B25A",
+                "&:hover": {
+                  background: theme.fn.darken("#00B25A", 0.1),
+                },
+              })}
+            >
+              My Projects
+            </Button>
           </motion.div>
         </Box>
       </Group>
