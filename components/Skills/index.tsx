@@ -80,7 +80,7 @@ export default function Skills({}: Props) {
         </Box>
         <Box className={classes.skill}>
           <SiCsharp size={80} />
-          <Text className={classes.name}>C Sharp</Text>
+          <Text className={classes.name}>C#</Text>
         </Box>
         <Box className={classes.skill}>
           <SiFirebase size={80} />

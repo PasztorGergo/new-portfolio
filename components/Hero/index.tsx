@@ -9,6 +9,7 @@ import {
   Button,
 } from "@mantine/core";
 import { motion, useAnimation } from "framer-motion";
+import { useWindowScroll } from "@mantine/hooks";
 
 const useStyles = createStyles((theme) => ({
   title: {
@@ -30,6 +31,7 @@ const useStyles = createStyles((theme) => ({
 export default function Hero() {
   const { classes } = useStyles();
   const controls = useAnimation();
+  const [scrollPos, scrollTo] = useWindowScroll();
 
   useEffect(() => {
     controls.start((num: number) =>
@@ -87,6 +89,7 @@ export default function Hero() {
                   background: theme.fn.darken("#00B25A", 0.1),
                 },
               })}
+              onClick={() => scrollTo({ y: 1600 })}
             >
               My Projects
             </Button>

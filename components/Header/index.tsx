@@ -22,7 +22,10 @@ const useStyles = createStyles((theme) => ({
   link: {
     color: "#fff",
     padding: "0.25rem",
-    transition: "all 300ms 300ms ease-in-out",
+    transition: "all 300ms 150ms ease-in-out",
+    "&:hover": {
+      opacity: 1,
+    },
   },
 }));
 
@@ -77,7 +80,7 @@ export default function Header() {
               About
             </UnstyledButton>
             <UnstyledButton
-              onClick={() => scrollTo({ y: 0 })}
+              onClick={() => scrollTo({ y: 1000 })}
               className={classes.link}
               sx={{
                 borderBottom:
@@ -90,11 +93,14 @@ export default function Header() {
               Skills
             </UnstyledButton>
             <UnstyledButton
-              onClick={() => scrollTo({ y: 0 })}
+              onClick={() => scrollTo({ y: 1600 })}
               className={classes.link}
               sx={{
-                borderBottom: scrollPos.y <= 0 ? "2px solid #00B25A" : "none",
-                opacity: scrollPos.y <= 0 ? 1 : 0.6,
+                borderBottom:
+                  scrollPos.y <= 2500 && scrollPos.y > 1500
+                    ? "2px solid #00B25A"
+                    : "none",
+                opacity: scrollPos.y <= 2500 && scrollPos.y > 1500 ? 1 : 0.6,
               }}
             >
               Projects
