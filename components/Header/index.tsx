@@ -9,7 +9,7 @@ import {
   UnstyledButton,
 } from "@mantine/core";
 import Image from "next/image";
-import { useWindowScroll } from "@mantine/hooks";
+import { useMediaQuery, useWindowScroll } from "@mantine/hooks";
 
 const useStyles = createStyles((theme) => ({
   name: {
@@ -32,6 +32,7 @@ const useStyles = createStyles((theme) => ({
 export default function Header() {
   const [open, setOpen] = useState<boolean>(false);
   const [scrollPos, scrollTo] = useWindowScroll();
+  const breakpoint = useMediaQuery("(min-width: 768px)", false);
 
   const { classes } = useStyles();
   return (
@@ -39,7 +40,7 @@ export default function Header() {
       <Group
         align="center"
         position="apart"
-        sx={{ margin: "0 clamp(0rem, 6rem, 6rem)" }}
+        sx={{ margin: `0 ${breakpoint ? "6rem" : "1rem"}` }}
       >
         <Group align="center">
           <Image src="/favicon.svg" width="64" height="64" />
@@ -80,7 +81,7 @@ export default function Header() {
               About
             </UnstyledButton>
             <UnstyledButton
-              onClick={() => scrollTo({ y: 1000 })}
+              onClick={() => scrollTo({ y: 1100 })}
               className={classes.link}
               sx={{
                 borderBottom:
@@ -113,7 +114,7 @@ export default function Header() {
                 opacity: scrollPos.y <= 0 ? 1 : 0.6,
               }}
             >
-              Contact
+              Testimonials
             </UnstyledButton>
           </Group>
         </MediaQuery>

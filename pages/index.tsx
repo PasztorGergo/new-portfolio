@@ -1,9 +1,11 @@
 import { NextPage } from "next";
-import { Title, Group, Text, Stack, Button, Box } from "@mantine/core";
+import { Box } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import Head from "next/head";
 import { About, Hero, Projects, Skills } from "../components";
 
 const Home: NextPage = () => {
+  const breakpoint = useMediaQuery("(min-width: 768px)", false);
   return (
     <>
       <Head>
@@ -11,7 +13,7 @@ const Home: NextPage = () => {
       </Head>
       <Box
         sx={{
-          padding: "0 clamp(0.01rem, 7rem, 7rem)",
+          padding: breakpoint ? "7rem" : "1rem",
           margin: "0",
           minHeight: "100vh",
         }}

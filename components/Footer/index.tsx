@@ -4,7 +4,12 @@ import { Footer as F, Text, createStyles, Group, Stack } from "@mantine/core";
 const useStyles = createStyles((theme) => ({
   footer: {
     background: "transparent",
-    padding: "2rem clamp(0.01rem, 7rem, 7rem)",
+    [theme.fn.largerThan("md")]: {
+      padding: "2rem 7rem",
+    },
+    [theme.fn.smallerThan("md")]: {
+      padding: "2rem 1rem",
+    },
   },
   heart: {
     color: "transparent",

@@ -8,10 +8,8 @@ import {
   Title,
   Image,
 } from "@mantine/core";
-import { motion, useAnimation } from "framer-motion";
-import React, { useEffect } from "react";
+import React from "react";
 import { AiOutlineLink } from "react-icons/ai";
-import { useInView } from "react-intersection-observer";
 
 import { DiHtml5, DiCss3, DiSass, DiReact, DiMongodb } from "react-icons/di";
 import {
@@ -24,6 +22,7 @@ import {
   SiFirebase,
   SiGithub,
 } from "react-icons/si";
+import { useMediaQuery } from "@mantine/hooks";
 
 const useStyles = createStyles((theme) => ({
   paper: {
@@ -35,21 +34,26 @@ const useStyles = createStyles((theme) => ({
       background: theme.fn.darken("#00B25A", 0.1),
     },
   },
+  title: {
+    borderLeft: "4px solid #00B25A",
+    paddingLeft: "1rem",
+    textTransform: "capitalize",
+  },
 }));
 
 const icons = {
-  HTML: <DiHtml5 size={24} key="HTML" />,
-  CSS: <DiCss3 size={24} key="CSS" />,
-  Tailwind: <SiTailwindcss size={24} key="Tailwind" />,
-  JavaScript: <SiJavascript size={24} key="JavaScript" />,
-  TypeScript: <SiTypescript size={24} key="TypeScript" />,
-  Sass: <DiSass size={24} key="Sass" />,
-  React: <DiReact size={24} key="React" />,
-  Next: <SiNextdotjs size={24} key="Next" />,
-  MongoDB: <DiMongodb size={24} key="MongoDB" />,
-  Firebase: <SiFirebase size={24} key="Firebase" />,
-  Node: <SiNodedotjs size={24} key="Node" />,
-  Csharp: <SiCsharp size={24} key="CSharp" />,
+  HTML: <DiHtml5 size={20} key="HTML" />,
+  CSS: <DiCss3 size={20} key="CSS" />,
+  Tailwind: <SiTailwindcss size={20} key="Tailwind" />,
+  JavaScript: <SiJavascript size={20} key="JavaScript" />,
+  TypeScript: <SiTypescript size={20} key="TypeScript" />,
+  Sass: <DiSass size={20} key="Sass" />,
+  React: <DiReact size={20} key="React" />,
+  Next: <SiNextdotjs size={20} key="Next" />,
+  MongoDB: <DiMongodb size={20} key="MongoDB" />,
+  Firebase: <SiFirebase size={20} key="Firebase" />,
+  Node: <SiNodedotjs size={20} key="Node" />,
+  Csharp: <SiCsharp size={20} key="CSharp" />,
 };
 
 type Props = {
@@ -89,74 +93,64 @@ export default function ProjectCard({
   highLight,
 }: Props) {
   const { classes } = useStyles();
-  const [ref, inView] = useInView();
-  const controls = useAnimation();
-
-  useEffect(() => {
-    if (highLight && inView) {
-      controls.start(() => ({
-        boxShadow: "0px 0px 1rem 1px #00B25Aff",
-        transition: { delay: 0.3 },
-      }));
-    }
-  }, [controls, inView]);
+  const breakpoint = useMediaQuery("(min-width: 808px)", false);
 
   return (
-    <motion.div
-      initial={{
-        boxShadow: "0px 0px 1rem 1px #00B25A00",
-      }}
-      ref={ref}
-      animate={controls}
+    <Paper
+      sx={{ boxShadow: highLight ? "0px 0px 1rem -0.5rem #00B25A" : "none" }}
+      radius="sm"
+      className={classes.paper}
+      p="xl"
     >
-      <Paper
-        sx={{ scale: highLight ? 1.05 : 1 }}
-        radius="sm"
-        className={classes.paper}
-        p="xl"
-      >
-        <Group>
-          <Image src={img} alt={img} radius="sm" height="40vh" />
-          <Stack>
-            <Text>
-              {status === "fresh"
-                ? "Just launched"
-                : status === "since"
-                ? `Launched in ${date}`
-                : "Under construction"}
-            </Text>
-            <Title>{title}</Title>
-            <Group>
-              {tech.map((x, i) => (
-                <Group key={i}>
-                  {icons[x]} <Text weight={600}>{x}</Text>
-                </Group>
-              ))}
-            </Group>
-            <Text>{desc}</Text>
-            <Group>
+      <Group grow={!breakpoint} direction={breakpoint ? "row" : "column"}>
+        <Image
+          src={img}
+          alt={img}
+          mx={breakpoint ? "0" : "auto"}
+          radius="sm"
+          height="40vh"
+        />
+        <Stack sx={{ width: breakpoint ? "40%" : "100%" }}>
+          <Text transform="uppercase" color="#00B25A">
+            {status === "fresh"
+              ? "Just kicked off"
+              : status === "since"
+              ? `Launched in ${date}`
+              : "Under construction"}
+          </Text>
+          <Title className={classes.title} order={2}>
+            {title}
+          </Title>
+          <Group>
+            {tech.map((x, i) => (
+              <Group position="left" sx={{ gap: "0.2rem" }} key={i}>
+                {icons[x]} <Text weight={600}>{x}</Text>
+              </Group>
+            ))}
+          </Group>
+          <Text>{desc}</Text>
+          <Group>
+            <Button
+              className={classes.button}
+              component="a"
+              href={href}
+              leftIcon={<AiOutlineLink size={24} />}
+            >
+              {href.replace("https://", "")}
+            </Button>
+            {source && (
               <Button
                 className={classes.button}
                 component="a"
-                href={href}
-                leftIcon={<AiOutlineLink size={24} />}
+                href={source}
+                leftIcon={<SiGithub size={24} />}
               >
-                Go to {href.replace("https://", "")}
+                Source
               </Button>
-              {source && (
-                <Button
-                  className={classes.button}
-                  component="a"
-                  href={source}
-                  leftIcon={<SiGithub size={24} />}
-                >
-                  Source
-                </Button>
-              )}
-            </Group>
-          </Stack>
-        </Group>
-      </Paper>
-    </motion.div>
+            )}
+          </Group>
+        </Stack>
+      </Group>
+    </Paper>
   );
 }

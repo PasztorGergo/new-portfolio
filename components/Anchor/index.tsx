@@ -4,6 +4,7 @@ import { useWindowScroll } from "@mantine/hooks";
 
 const useStyles = createStyles((theme) => ({
   a: {
+    cursor: "pointer",
     color: "#00B25Aaf",
     boxShadow: "0 0 0 0 #00B25A inset",
     transition: "all 150ms ease-in",

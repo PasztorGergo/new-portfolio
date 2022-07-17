@@ -12,3 +12,6 @@ body {
   background-color: #00b259;
   border-radius: 2rem;
 }
+section {
+  margin-bottom: 3rem;
+}

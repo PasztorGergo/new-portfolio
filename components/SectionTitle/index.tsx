@@ -10,7 +10,8 @@ type Props = {
 const useStyles = createStyles((theme) => ({
   title: {
     maxWidth: "min-content",
-    padding: "0 1rem 0.35rem 0",
+    padding: "0 1rem 0.5rem 0",
+    marginBottom: "2rem",
   },
 }));
 

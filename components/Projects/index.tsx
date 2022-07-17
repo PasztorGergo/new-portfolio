@@ -16,13 +16,13 @@ export default function Projects() {
       <SectionTitle>Projects</SectionTitle>
       <Box mt="xl">
         <ProjectCard
-          img="/gergo.jpg"
-          title="test"
-          desc="test"
-          tech={["CSS", "JavaScript"]}
-          href="/"
+          img="/project/lampMuseum.png"
+          title="Electrotechnical Collection, Hungary"
+          desc="Electrotechnical Collection, Hungary is a melting pot of lamps and electronic tools gathered by Levente Csíkász."
+          tech={["TypeScript", "Next", "React", "MongoDB"]}
+          href="https://lamp-museum.vercel.app"
           highLight
-          status="wip"
+          status="fresh"
         />
       </Box>
     </section>
