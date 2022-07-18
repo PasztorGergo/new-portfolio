@@ -150,6 +150,7 @@ export default function ProjectCard({
               className={classes.button}
               component="a"
               href={href}
+              target="_blank"
               leftIcon={<AiOutlineLink size={24} />}
             >
               {href.replace("https://", "").length > 24
@@ -160,6 +161,7 @@ export default function ProjectCard({
               <Button
                 className={classes.button}
                 component="a"
+                target="_blank"
                 href={source}
                 leftIcon={<SiGithub size={24} />}
               >
