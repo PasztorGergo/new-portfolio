@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import { Box } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import Head from "next/head";
-import { About, Hero, Projects, Skills } from "../components";
+import { About, Hero, Projects, Skills, Testimonials } from "../components";
 
 const Home: NextPage = () => {
   const breakpoint = useMediaQuery("(min-width: 768px)", false);
@@ -22,6 +22,7 @@ const Home: NextPage = () => {
         <About />
         <Skills />
         <Projects />
+        <Testimonials />
       </Box>
     </>
   );

@@ -1,4 +1,4 @@
-import { Box, createStyles } from "@mantine/core";
+import { Box, createStyles, Stack } from "@mantine/core";
 import React from "react";
 import ProjectCard from "../ProjectCard";
 import SectionTitle from "../SectionTitle";
@@ -14,7 +14,7 @@ export default function Projects() {
   return (
     <section className={classes.section}>
       <SectionTitle>Projects</SectionTitle>
-      <Box mt="xl">
+      <Stack mt="xl" sx={{ gap: "3rem" }}>
         <ProjectCard
           img="/project/lampMuseum.png"
           title="Electrotechnical Collection, Hungary"
@@ -24,7 +24,25 @@ export default function Projects() {
           highLight
           status="fresh"
         />
-      </Box>
+        <ProjectCard
+          img="/project/weatherApp.png"
+          title="Sunnier"
+          desc="Get the weather forecast up to three days in advance"
+          tech={["React", "Node"]}
+          href="https://weather-application-pasztorgergo.vercel.app"
+          status="since"
+          date={new Date(2022, 4)}
+          position="right"
+        />
+        <ProjectCard
+          img="/project/formified.png"
+          title="Formified"
+          desc="Build HTML forms and copy-paste the code! Formified is a HTML generator for forms."
+          tech={["Next", "Tailwind", "Sass"]}
+          href="https://formified.vercel.app"
+          status="wip"
+        />
+      </Stack>
     </section>
   );
 }

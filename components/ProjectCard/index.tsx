@@ -23,6 +23,7 @@ import {
   SiGithub,
 } from "react-icons/si";
 import { useMediaQuery } from "@mantine/hooks";
+import { format } from "date-fns";
 
 const useStyles = createStyles((theme) => ({
   paper: {
@@ -78,7 +79,8 @@ type Props = {
   img: string;
   source?: string;
   desc: string;
-  highLight: boolean;
+  highLight?: boolean;
+  position?: "left" | "right";
 };
 
 export default function ProjectCard({
@@ -91,6 +93,7 @@ export default function ProjectCard({
   href,
   source,
   highLight,
+  position,
 }: Props) {
   const { classes } = useStyles();
   const breakpoint = useMediaQuery("(min-width: 808px)", false);
@@ -102,20 +105,33 @@ export default function ProjectCard({
       className={classes.paper}
       p="xl"
     >
-      <Group grow={!breakpoint} direction={breakpoint ? "row" : "column"}>
+      <Group
+        grow
+        sx={{
+          flexDirection: breakpoint
+            ? position === "right"
+              ? "row-reverse"
+              : "row"
+            : "column",
+        }}
+        direction={breakpoint ? "row" : "column"}
+        position="apart"
+      >
         <Image
           src={img}
           alt={img}
           mx={breakpoint ? "0" : "auto"}
           radius="sm"
           height="40vh"
+          sx={{ maxWidth: breakpoint ? "40%" : "100%" }}
         />
-        <Stack sx={{ width: breakpoint ? "40%" : "100%" }}>
+        <Stack align="start" sx={{ width: "100%" }}>
           <Text transform="uppercase" color="#00B25A">
             {status === "fresh"
               ? "Just kicked off"
               : status === "since"
-              ? `Launched in ${date}`
+              ? //@ts-ignore
+                `Launched in ${format(date, "LLLL yyyy")}`
               : "Under construction"}
           </Text>
           <Title className={classes.title} order={2}>
@@ -136,7 +152,9 @@ export default function ProjectCard({
               href={href}
               leftIcon={<AiOutlineLink size={24} />}
             >
-              {href.replace("https://", "")}
+              {href.replace("https://", "").length > 24
+                ? `${href.replace("https://", "").slice(0, 24)}...`
+                : href.replace("https://", "")}
             </Button>
             {source && (
               <Button

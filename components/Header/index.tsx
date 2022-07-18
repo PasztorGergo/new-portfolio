@@ -98,20 +98,23 @@ export default function Header() {
               className={classes.link}
               sx={{
                 borderBottom:
-                  scrollPos.y <= 2500 && scrollPos.y > 1500
+                  scrollPos.y <= 2900 && scrollPos.y > 1500
                     ? "2px solid #00B25A"
                     : "none",
-                opacity: scrollPos.y <= 2500 && scrollPos.y > 1500 ? 1 : 0.6,
+                opacity: scrollPos.y <= 2900 && scrollPos.y > 1500 ? 1 : 0.6,
               }}
             >
               Projects
             </UnstyledButton>
             <UnstyledButton
-              onClick={() => scrollTo({ y: 0 })}
+              onClick={() => scrollTo({ y: 3000 })}
               className={classes.link}
               sx={{
-                borderBottom: scrollPos.y <= 0 ? "2px solid #00B25A" : "none",
-                opacity: scrollPos.y <= 0 ? 1 : 0.6,
+                borderBottom:
+                  scrollPos.y > 2900 && scrollPos.y < 3600
+                    ? "2px solid #00B25A"
+                    : "none",
+                opacity: scrollPos.y > 2900 && scrollPos.y < 3600 ? 1 : 0.6,
               }}
             >
               Testimonials
