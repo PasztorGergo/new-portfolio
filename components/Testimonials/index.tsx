@@ -28,7 +28,7 @@ export default function Testimonials() {
       children: (
         <>
           <Text align="center">
-            Be the next satisfied person, with who I'll collaborate! 😉
+            Be the next satisfied person, with who I will collaborate! 😉
           </Text>
         </>
       ),
