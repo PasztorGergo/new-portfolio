@@ -126,6 +126,7 @@ export default function Hero() {
                 }}
                 href="https://twitter.com/G3rgoPasztor"
                 target="_blank"
+                rel="noreferrer"
               >
                 <SiTwitter size={24} />
               </a>
@@ -152,6 +153,7 @@ export default function Hero() {
                 }}
                 href="https://www.linkedin.com/in/gerg%C5%91-p%C3%A1sztor-a0aa41214/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <SiLinkedin size={24} />
               </a>
@@ -177,6 +179,7 @@ export default function Hero() {
                   alignItems: "center",
                 }}
                 href="mailto:pasztorg@gmail.com"
+                rel="noreferrer"
               >
                 <FaAt size={24} />
               </a>

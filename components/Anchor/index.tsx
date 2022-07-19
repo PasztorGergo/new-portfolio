@@ -36,7 +36,7 @@ export default function Anchor({ children, href }: Props) {
       {children}
     </a>
   ) : (
-    <a className={classes.a} href={href} target="_blank">
+    <a className={classes.a} href={href} target="_blank" rel="noreferrer">
       {children}
     </a>
   );
