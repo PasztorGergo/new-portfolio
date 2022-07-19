@@ -42,7 +42,7 @@ export default function Testimonials() {
       children: (
         <>
           <Text align="center">
-            I must confess, He did a fantastic work! I'm keen on with the
+            I must confess, He did a fantastic work! I&apos;m keen on with the
             design, and the layout is outstanding.
           </Text>{" "}
           <Text align="center" weight="600">
