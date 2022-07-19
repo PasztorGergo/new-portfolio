@@ -43,6 +43,7 @@ export default function About() {
           alt="Gergő Pásztor's photo"
           width={breakpoint ? "30vw" : "90%"}
           height={breakpoint ? "35vw" : "25rem"}
+          sx={{ marginRight: "0" }}
         />
       </Group>
     </section>

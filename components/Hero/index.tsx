@@ -7,9 +7,12 @@ import {
   Group,
   Box,
   Button,
+  ThemeIcon,
 } from "@mantine/core";
 import { motion, useAnimation } from "framer-motion";
-import { useWindowScroll } from "@mantine/hooks";
+import { useMediaQuery, useWindowScroll } from "@mantine/hooks";
+import { SiTwitter, SiLinkedin } from "react-icons/si";
+import { FaAt } from "react-icons/fa";
 
 const useStyles = createStyles((theme) => ({
   title: {
@@ -32,6 +35,7 @@ export default function Hero() {
   const { classes } = useStyles();
   const controls = useAnimation();
   const [scrollPos, scrollTo] = useWindowScroll();
+  const breakpoint = useMediaQuery("(min-width:550px)", false);
 
   useEffect(() => {
     controls.start((num: number) =>
@@ -95,6 +99,90 @@ export default function Hero() {
             </Button>
           </motion.div>
         </Box>
+        <motion.div
+          animate={{ opacity: 1, transition: { delay: 2 } }}
+          initial={{ opacity: 0 }}
+        >
+          <Group direction={breakpoint ? "column" : "row"}>
+            <ThemeIcon
+              variant="outline"
+              radius="xl"
+              sx={{
+                borderColor: "#00B25A",
+                borderWidth: "2px",
+                width: "3.5rem",
+                height: "3.5rem",
+                transition: "all 300ms ease-in-out",
+                "&:hover": {
+                  background: "#00B25A",
+                },
+              }}
+            >
+              <a
+                style={{
+                  height: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                }}
+                href="https://twitter.com/G3rgoPasztor"
+                target="_blank"
+              >
+                <SiTwitter size={24} />
+              </a>
+            </ThemeIcon>
+            <ThemeIcon
+              variant="outline"
+              radius="xl"
+              sx={{
+                borderColor: "#00B25A",
+                borderWidth: "2px",
+                width: "3.5rem",
+                height: "3.5rem",
+                transition: "all 300ms ease-in-out",
+                "&:hover": {
+                  background: "#00B25A",
+                },
+              }}
+            >
+              <a
+                style={{
+                  height: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                }}
+                href="https://www.linkedin.com/in/gerg%C5%91-p%C3%A1sztor-a0aa41214/"
+                target="_blank"
+              >
+                <SiLinkedin size={24} />
+              </a>
+            </ThemeIcon>
+            <ThemeIcon
+              variant="outline"
+              radius="xl"
+              sx={{
+                borderColor: "#00B25A",
+                borderWidth: "2px",
+                width: "3.5rem",
+                height: "3.5rem",
+                transition: "all 300ms ease-in-out",
+                "&:hover": {
+                  background: "#00B25A",
+                },
+              }}
+            >
+              <a
+                style={{
+                  height: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                }}
+                href="mailto:pasztorg@gmail.com"
+              >
+                <FaAt size={24} />
+              </a>
+            </ThemeIcon>
+          </Group>
+        </motion.div>
       </Group>
     </section>
   );

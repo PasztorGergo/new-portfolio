@@ -57,13 +57,20 @@ export default function TestimonialCard({
   const scale = useTransform(x, [-150, 0, 150], [0.5, 1, 0.5]);
 
   const handleDrag = (event: any, info: any) => {
-    if (info.offset.x < -100) {
-      setIndex(index! + 1);
+    if (info.offset.x < -100 && index) {
       setExitX(-250);
+
+      setIndex((prev: Array<any>) => [
+        ...prev.filter(({ name }) => name !== prev[index].name),
+      ]);
     }
-    if (info.offset.x > 100) {
-      setIndex(index! + 1);
+    setExitX(250);
+    if (info.offset.x > 100 && index) {
       setExitX(250);
+
+      setIndex((prev: Array<any>) => [
+        ...prev.filter(({ name }) => name !== prev[index].name),
+      ]);
     }
   };
 
@@ -74,7 +81,6 @@ export default function TestimonialCard({
         top: "0",
         cursor: "grab",
         x: x,
-        scale: scale,
       }}
       whileTap={{ cursor: "grabbing" }}
       dragConstraints={{ top: 0, right: 0, bottom: 0, left: 0 }}
@@ -84,35 +90,42 @@ export default function TestimonialCard({
       transition={transition}
       initial={initial}
       exit={{
-        x: exitX,
+        x: "100%",
         opacity: 0,
         scale: 0.5,
-        transition: { duration: 0.6 },
+        transition: { duration: 0.2 },
       }}
     >
-      <Paper
-        className={classes.paper}
-        radius="sm"
-        p="xl"
-        sx={{ width: breakpoint ? "40%" : "100%" }}
+      <motion.div
+        style={{
+          scale: scale,
+        }}
       >
-        <Avatar
-          src={profilePicture}
-          component="a"
-          href={contact}
-          className={classes.avatar}
-          size={96}
-        />
-        <Stack pt="3rem">
-          <Title align="center" order={3}>
-            {name}
-          </Title>
-          <Text align="center" color="dimmed" size="sm">
-            {role}
-          </Text>
-          {children}
-        </Stack>
-      </Paper>
+        <Paper
+          className={classes.paper}
+          radius="sm"
+          p="xl"
+          sx={{ minWidth: breakpoint ? "40%" : "100%" }}
+        >
+          <Avatar
+            src={profilePicture}
+            component="a"
+            href={contact}
+            className={classes.avatar}
+            size={96}
+            color="dark"
+          />
+          <Stack pt="3rem">
+            <Title align="center" order={3}>
+              {name}
+            </Title>
+            <Text align="center" color="dimmed" size="sm">
+              {role}
+            </Text>
+            {children}
+          </Stack>
+        </Paper>
+      </motion.div>
     </motion.div>
   );
 }

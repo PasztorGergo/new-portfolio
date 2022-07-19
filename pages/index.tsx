@@ -13,9 +13,10 @@ const Home: NextPage = () => {
       </Head>
       <Box
         sx={{
-          padding: breakpoint ? "7rem" : "1rem",
+          padding: breakpoint ? "3rem 7rem" : "1rem",
           margin: "0",
           minHeight: "100vh",
+          overflowX: "hidden",
         }}
       >
         <Hero />

@@ -1,5 +1,6 @@
 import React from "react";
 import { Footer as F, Text, createStyles, Group, Stack } from "@mantine/core";
+import { motion } from "framer-motion";
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -9,6 +10,9 @@ const useStyles = createStyles((theme) => ({
     },
     [theme.fn.smallerThan("md")]: {
       padding: "2rem 1rem",
+      "& *": {
+        textAlign: "center",
+      },
     },
   },
   heart: {
@@ -22,14 +26,25 @@ export default function Footer() {
   const { classes } = useStyles();
   return (
     <F className={classes.footer} height="30vh" sx={{ border: "none" }}>
-      <Group sx={{ height: "100%" }}>
-        <Stack sx={{ height: "100%" }} justify="center">
-          <Text>
-            Made with <span className={classes.heart}>❤</span> by Gergő Pásztor
-          </Text>
-          <Text>&copy; 2022</Text>
-        </Stack>
-      </Group>
+      <Stack sx={{ height: "100%", width: "100%" }} justify="center">
+        <Text>
+          Made by Gergő Pásztor with{" "}
+          <motion.span
+            animate={{
+              fontSize: ["0.75rem", "1rem"],
+            }}
+            transition={{
+              type: "spring",
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+            className={classes.heart}
+          >
+            ❤
+          </motion.span>{" "}
+        </Text>
+        <Text>&copy; 2022</Text>
+      </Stack>
     </F>
   );
 }
