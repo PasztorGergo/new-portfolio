@@ -8,7 +8,6 @@ export default function Document() {
           name="description"
           content="Portfolio of Gergő Pásztor, full-stack web developer based in Győr, Hungary."
         />
-        <meta name="og:image" content="/gergo.jpg" />
         <meta
           name="og:description"
           content="Portfolio of Gergő Pásztor, full-stack web developer based in Győr, Hungary."
