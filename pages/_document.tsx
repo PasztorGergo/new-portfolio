@@ -17,8 +17,8 @@ export default function Document() {
         <meta name="og:type" content="website" />
         <meta name="og:url" content="https://gergopasztor.com" />
         <meta name="og:site_name" content="Portfolio | Gergő Pásztor" />
-        <meta name="og:image" content="/gergo.jpg" />
-        <meta name="og:image:type" content="image/jpeg" />
+        <meta name="og:image" content="/gergo.webp" />
+        <meta name="og:image:type" content="image/webp" />
         <meta name="og:image:width" content="600" />
         <meta name="og:image:height" content="450" />
         <link
