@@ -16,7 +16,7 @@ export default function Projects() {
       <SectionTitle>Projects</SectionTitle>
       <Stack mt="xl" sx={{ gap: "3rem" }}>
         <ProjectCard
-          img="/project/lampMuseum.png"
+          img="/project/lampMuseum.webp"
           title="Electrotechnical Collection, Hungary"
           desc="Electrotechnical Collection, Hungary is a melting pot of lamps and electronic tools gathered by Levente Csíkász."
           tech={["TypeScript", "Next", "React", "MongoDB"]}
@@ -26,7 +26,7 @@ export default function Projects() {
           alt="Electrotechnical Collection, Hungary Preview"
         />
         <ProjectCard
-          img="/project/weatherApp.png"
+          img="/project/weatherApp.webp"
           title="Sunnier"
           desc="Get the weather forecast up to three days in advance"
           tech={["React", "Node"]}
@@ -37,7 +37,7 @@ export default function Projects() {
           alt="Sunnier Preview"
         />
         <ProjectCard
-          img="/project/formified.png"
+          img="/project/formified.webp"
           title="Formified"
           desc="Build HTML forms and copy-paste the code! Formified is a HTML generator for forms."
           tech={["Next", "Tailwind", "Sass"]}

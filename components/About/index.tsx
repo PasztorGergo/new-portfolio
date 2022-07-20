@@ -38,7 +38,7 @@ export default function About() {
           </Text>
         </Stack>
         <Image
-          src="/gergo.jpg"
+          src="/gergo.webp"
           radius="sm"
           alt="Gergő Pásztor's photo"
           width={breakpoint ? "30vw" : "90%"}
