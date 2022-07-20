@@ -54,7 +54,12 @@ export default function Header() {
         <MediaQuery styles={{ display: "none" }} largerThan="md">
           <Box sx={{ width: "100%" }}>
             <Group align="center" position="apart">
-              <Image src="/favicon.svg" width="64" height="64" />
+              <Image
+                src="/favicon.svg"
+                alt="Gergő Pásztor's logo"
+                width="64"
+                height="64"
+              />
               <Title className={classes.name} order={3}>
                 Gergő Pásztor
               </Title>
@@ -143,7 +148,12 @@ export default function Header() {
         <MediaQuery styles={{ display: "none" }} smallerThan="md">
           <Group position="apart" sx={{ width: "100%" }}>
             <Group align="center">
-              <Image src="/favicon.svg" width="64" height="64" />
+              <Image
+                src="/favicon.svg"
+                alt="Gergő Pásztor's logo"
+                width="64"
+                height="64"
+              />
               <Title className={classes.name} order={3}>
                 Gergő Pásztor
               </Title>

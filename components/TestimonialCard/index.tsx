@@ -114,6 +114,7 @@ export default function TestimonialCard({
             className={classes.avatar}
             size={96}
             color="dark"
+            alt={`Photo of ${name}`}
           />
           <Stack pt="3rem">
             <Title align="center" order={3}>

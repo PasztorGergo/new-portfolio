@@ -23,6 +23,7 @@ export default function Projects() {
           href="https://lamp-museum.vercel.app"
           highLight
           status="fresh"
+          alt="Electrotechnical Collection, Hungary Preview"
         />
         <ProjectCard
           img="/project/weatherApp.png"
@@ -33,6 +34,7 @@ export default function Projects() {
           status="since"
           date={new Date(2022, 4)}
           position="right"
+          alt="Sunnier Preview"
         />
         <ProjectCard
           img="/project/formified.png"
@@ -41,6 +43,7 @@ export default function Projects() {
           tech={["Next", "Tailwind", "Sass"]}
           href="https://formified.vercel.app"
           status="wip"
+          alt="Formified Preview"
         />
       </Stack>
     </section>
