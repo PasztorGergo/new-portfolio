@@ -6,13 +6,26 @@ export default function Document() {
       <Head>
         <meta
           name="description"
-          content="Take a look at my projects and achievements that I have made during my developer journey"
+          content="Portfolio of Gergő Pásztor, a full-stack webdevloper based in Hungary"
         />
         <meta name="og:image" content="/gergo.jpg" />
         <meta
           name="og:description"
-          content="Take a look at my projects and achievements that I have made during my developer journey"
+          content="Portfolio of Gergő Pásztor, a full-stack webdevloper based in Hungary"
         />
+        <meta name="author" content="Gergő Pásztor" />
+        <meta
+          name="keywords"
+          content="Gergő Pásztor, Gergő Pásztor's portfolio"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@G3rgoPasztor" />
+        <meta name="twitter:creator" content="@G3rgoPasztor" />
+        <meta
+          name="twitter:description>"
+          content="Portfolio of Gergő Pásztor, a full-stack webdevloper based in Hungary"
+        />
+        <meta name="twitter:image" content="/gergo.jpg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
