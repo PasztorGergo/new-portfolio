@@ -81,6 +81,7 @@ type Props = {
   desc: string;
   highLight?: boolean;
   position?: "left" | "right";
+  alt: string;
 };
 
 export default function ProjectCard({
@@ -94,6 +95,7 @@ export default function ProjectCard({
   source,
   highLight,
   position,
+  alt,
 }: Props) {
   const { classes } = useStyles();
   const breakpoint = useMediaQuery("(min-width: 808px)", false);
@@ -119,7 +121,7 @@ export default function ProjectCard({
       >
         <Image
           src={img}
-          alt={img}
+          alt={alt}
           mx={breakpoint ? "0" : "auto"}
           radius="sm"
           height="40vh"

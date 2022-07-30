@@ -2,7 +2,15 @@ import { NextPage } from "next";
 import { Box } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import Head from "next/head";
-import { About, Hero, Projects, Skills, Testimonials } from "../components";
+import dynamic from "next/dynamic";
+
+const { About, Hero, Projects, Skills, Testimonials }: any = {
+  About: dynamic(() => import("../components/About")),
+  Hero: dynamic(() => import("../components/Hero")),
+  Projects: dynamic(() => import("../components/Projects")),
+  Skills: dynamic(() => import("../components/Skills")),
+  Testimonials: dynamic(() => import("../components/Testimonials")),
+};
 
 const Home: NextPage = () => {
   const breakpoint = useMediaQuery("(min-width: 768px)", false);
