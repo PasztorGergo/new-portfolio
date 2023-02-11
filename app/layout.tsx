@@ -13,7 +13,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html>
       <body className={inter.className}>
         <Global
-          styles={(theme) => ({
+          styles={{
             "*": {
               color: "#fff",
             },
@@ -21,7 +21,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
               padding: "0.1rem",
               textDecoration: "none",
             },
-          })}
+          }}
         />
         <AppShell footer={<Footer />} header={<Header />}>
           {children}

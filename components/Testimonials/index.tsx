@@ -25,12 +25,6 @@ export default function Testimonials() {
   const [comments, setComments] = useState<Array<testimonial>>([
     {
       contact: "",
-      name: "",
-      profilePicture: "",
-      children: <></>,
-    },
-    {
-      contact: "",
       name: "You",
       profilePicture: "",
       children: (
@@ -70,8 +64,10 @@ export default function Testimonials() {
             Gergő&apos;s article for my blog was fantastic. The writing style
             was engaging, the content was well-researched and informative, and
             the overall quality was professional.
-            <br />I would highly recommend Gergő as a writer and I look forward
-            to working with him again in the future.
+          </Text>
+          <Text align="center" sx={{ maxWidth: "32rem" }}>
+            I would highly recommend Gergő as a writer and I look forward to
+            working with him again in the future.
           </Text>
         </>
       ),

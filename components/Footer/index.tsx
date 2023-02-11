@@ -26,12 +26,12 @@ const useStyles = createStyles((theme) => ({
 export default function Footer() {
   const { classes } = useStyles();
   return (
-    <F className={classes.footer} height="30vh" sx={{ border: "none" }}>
+    <F className={classes.footer} height="20vh" sx={{ border: "none" }}>
       <Stack sx={{ height: "100%", width: "100%" }} justify="center">
-        <Text>
-          Made by Gergő Pásztor with <span className={classes.heart}>❤</span>
+        <Text align="center" sx={{ height: "100%", width: "100%" }}>
+          Made by Gergő Pásztor with <span className={classes.heart}>❤</span>{" "}
+          &copy; 2022
         </Text>
-        <Text>&copy; 2022</Text>
       </Stack>
     </F>
   );
