@@ -1,3 +1,4 @@
+"use client";
 import { Group, Stack, Text, Image } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import React from "react";
@@ -12,8 +13,8 @@ export default function About() {
       <Group position="apart">
         <Stack sx={{ width: breakpoint ? "50%" : "100%" }}>
           <Text>
-            My name is <strong>Gergő</strong> Pásztor a fullstack web developer,
-            and a student from Hungary.
+            My name is <strong>Gergő</strong> Pásztor a full-stack web developer
+            from Hungary.
           </Text>
           <Text>
             In my second year at Pattantyús-Ábrahám Géza Technical Secondary
@@ -23,13 +24,16 @@ export default function About() {
           </Text>
           <Text>
             <strong>2022</strong> was the year that extremely affected me. I
-            built <strong>relationships</strong> with people on Twitter and got
-            my first{" "}
-            <Anchor href="https://lamp-museum.vercel.app/">commission</Anchor>.
+            built <strong>relationships</strong> with people on Twitter and
+            completed my first{" "}
+            <Anchor href="https://villamostechnikai-gyujtemeny.vercel.app/">
+              freelance work
+            </Anchor>
+            .
           </Text>
           <Text>
-            After these <strong>experiences</strong>, helping people and getting
-            familiar with others became my<strong> aspiration</strong>.
+            Experiences like these made me build side projects and get in touch
+            with other creators.
           </Text>
           <Text>
             If reading all of these got your attention, check out my{" "}

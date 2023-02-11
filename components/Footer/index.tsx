@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Footer as F, Text, createStyles, Group, Stack } from "@mantine/core";
 import { motion } from "framer-motion";
@@ -28,20 +29,7 @@ export default function Footer() {
     <F className={classes.footer} height="30vh" sx={{ border: "none" }}>
       <Stack sx={{ height: "100%", width: "100%" }} justify="center">
         <Text>
-          Made by Gergő Pásztor with{" "}
-          <motion.span
-            animate={{
-              fontSize: ["0.75rem", "1rem"],
-            }}
-            transition={{
-              type: "spring",
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-            className={classes.heart}
-          >
-            ❤
-          </motion.span>{" "}
+          Made by Gergő Pásztor with <span className={classes.heart}>❤</span>
         </Text>
         <Text>&copy; 2022</Text>
       </Stack>

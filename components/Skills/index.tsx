@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import SectionTitle from "../SectionTitle";
 import { Box, createStyles, Group, Text } from "@mantine/core";

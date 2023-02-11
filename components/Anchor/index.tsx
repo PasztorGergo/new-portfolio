@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { createStyles } from "@mantine/core";
 import { useWindowScroll } from "@mantine/hooks";

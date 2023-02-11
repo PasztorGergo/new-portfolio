@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, createStyles, Stack } from "@mantine/core";
 import React from "react";
 import ProjectCard from "../ProjectCard";
@@ -16,13 +18,23 @@ export default function Projects() {
       <SectionTitle>Projects</SectionTitle>
       <Stack mt="xl" sx={{ gap: "3rem" }}>
         <ProjectCard
+          img="/project/Gradicol.webp"
+          title="Gradicol"
+          desc="Browse catchy linear gradients and copy the source code only with one click."
+          tech={["TypeScript", "Next", "React", "Tailwind"]}
+          href="https://gradicol.vercel.app"
+          status="fresh"
+          alt="Gradicol"
+        />
+        <ProjectCard
           img="/project/lampMuseum.webp"
           title="Electrotechnical Collection, Hungary"
           desc="Electrotechnical Collection, Hungary is a melting pot of lamps and electronic tools gathered by Levente Csíkász."
           tech={["TypeScript", "Next", "React", "MongoDB"]}
-          href="https://lamp-museum.vercel.app"
-          highLight
-          status="fresh"
+          href="https://villamostechnikai-gyujtemeny.vercel.app/"
+          status="since"
+          date={new Date(2023, 0)}
+          position="right"
           alt="Electrotechnical Collection, Hungary Preview"
         />
         <ProjectCard
@@ -33,7 +45,6 @@ export default function Projects() {
           href="https://weather-application-pasztorgergo.vercel.app"
           status="since"
           date={new Date(2022, 4)}
-          position="right"
           alt="Sunnier Preview"
         />
         <ProjectCard
@@ -44,6 +55,7 @@ export default function Projects() {
           href="https://formified.vercel.app"
           status="wip"
           alt="Formified Preview"
+          position="right"
         />
       </Stack>
     </section>

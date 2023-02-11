@@ -1,3 +1,5 @@
+"use client";
+
 import { Avatar, createStyles, Paper, Stack, Title, Text } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import React from "react";
@@ -115,6 +117,9 @@ export default function TestimonialCard({
             size={96}
             color="dark"
             alt={`Photo of ${name}`}
+            sx={{
+              padding: "0",
+            }}
           />
           <Stack pt="3rem">
             <Title align="center" order={3}>

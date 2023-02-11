@@ -1,3 +1,5 @@
+"use client";
+
 import { createStyles, Title } from "@mantine/core";
 import React, { useEffect } from "react";
 import { useAnimation, motion } from "framer-motion";

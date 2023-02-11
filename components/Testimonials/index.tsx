@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, createStyles, Text } from "@mantine/core";
 import React, { useState } from "react";
 import SectionTitle from "../SectionTitle";
@@ -23,6 +25,12 @@ export default function Testimonials() {
   const [comments, setComments] = useState<Array<testimonial>>([
     {
       contact: "",
+      name: "",
+      profilePicture: "",
+      children: <></>,
+    },
+    {
+      contact: "",
       name: "You",
       profilePicture: "",
       children: (
@@ -36,17 +44,34 @@ export default function Testimonials() {
     {
       contact: "https://www.facebook.com/levente.csikasz.77",
       name: "Levente Csíkász",
-      profilePicture:
-        "https://scontent-vie1-1.xx.fbcdn.net/v/t39.30808-6/291327999_557328616133024_5215861544277751063_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=aKLS3r5f43UAX82PZAz&_nc_ht=scontent-vie1-1.xx&oh=00_AT9VVKyNxpLaAmWUSGYZpqGQag8e6FBzKdn4YrlkW3egrQ&oe=62D9CDF2",
+      profilePicture: "/LeventeCsikasz.jpg",
       role: "CEO of Electrotechnical Collection, Hungary",
       children: (
         <>
           <Text align="center">
-            I must confess, He did a fantastic work! I&apos;m keen on with the
-            design, and the layout is outstanding.
+            I must confess, He did a fantastic work!
+            <br />
+            I&apos;m keen on with the design, and the layout is outstanding.
           </Text>{" "}
           <Text align="center" weight="600">
             I love it!
+          </Text>
+        </>
+      ),
+    },
+    {
+      contact: "https://twitter.com/denicmarko",
+      name: "Marko Denic",
+      profilePicture: "/MarkoDenic.jpg",
+      role: "Software Engineer, Twitter Creator",
+      children: (
+        <>
+          <Text align="center" sx={{ maxWidth: "32rem" }}>
+            Gergő&apos;s article for my blog was fantastic. The writing style
+            was engaging, the content was well-researched and informative, and
+            the overall quality was professional.
+            <br />I would highly recommend Gergő as a writer and I look forward
+            to working with him again in the future.
           </Text>
         </>
       ),
@@ -63,6 +88,9 @@ export default function Testimonials() {
           marginTop: "6rem",
         }}
       >
+        <Text weight="600" size="xl" color="dimmed" align="center">
+          Drag me horizontally ↔
+        </Text>
         <motion.div
           style={{
             display: "flex",
@@ -70,6 +98,7 @@ export default function Testimonials() {
             position: "relative",
             alignItems: "center",
             height: "40vh",
+            marginTop: "3rem",
           }}
         >
           <AnimatePresence>
@@ -93,15 +122,9 @@ export default function Testimonials() {
                     initial={{ scale: 1, opacity: 1 }}
                     setExitX={setExitX}
                     exitX={exitX}
-                    drag={
-                      comments.length > 1
-                        ? isLast
-                          ? "x"
-                          : undefined
-                        : undefined
-                    }
-                    index={isLast ? comments.length - 1 : undefined}
-                    setIndex={isLast ? setComments : undefined}
+                    drag="x"
+                    index={isLast ? comments.length - 1 : 0}
+                    setIndex={isLast ? setComments : 0}
                   >
                     {children}
                   </TestimonialCard>
@@ -110,9 +133,6 @@ export default function Testimonials() {
             )}
           </AnimatePresence>
         </motion.div>
-        <Text weight="600" size="xl" color="dimmed" align="center">
-          Drag me horizontally ↔
-        </Text>
       </Box>
     </section>
   );

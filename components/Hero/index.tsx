@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import {
   createStyles,
@@ -104,86 +106,86 @@ export default function Hero() {
           initial={{ opacity: 0 }}
         >
           <Group direction={breakpoint ? "column" : "row"}>
-            <ThemeIcon
-              variant="outline"
-              radius="xl"
-              sx={{
-                borderColor: "#00B25A",
-                borderWidth: "2px",
-                width: "3.5rem",
-                height: "3.5rem",
-                transition: "all 300ms ease-in-out",
-                "&:hover": {
-                  background: "#00B25A",
-                },
+            <a
+              style={{
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
               }}
+              href="https://twitter.com/G3rgoPasztor"
+              target="_blank"
+              rel="noreferrer"
             >
-              <a
-                style={{
-                  height: "100%",
-                  display: "flex",
-                  alignItems: "center",
+              <ThemeIcon
+                variant="outline"
+                radius="xl"
+                sx={{
+                  borderColor: "#00B25A",
+                  borderWidth: "2px",
+                  width: "3.5rem",
+                  height: "3.5rem",
+                  transition: "all 300ms ease-in-out",
+                  "&:hover": {
+                    background: "#00B25A",
+                  },
                 }}
-                href="https://twitter.com/G3rgoPasztor"
-                target="_blank"
-                rel="noreferrer"
               >
                 <SiTwitter size={24} />
-              </a>
-            </ThemeIcon>
-            <ThemeIcon
-              variant="outline"
-              radius="xl"
-              sx={{
-                borderColor: "#00B25A",
-                borderWidth: "2px",
-                width: "3.5rem",
-                height: "3.5rem",
-                transition: "all 300ms ease-in-out",
-                "&:hover": {
-                  background: "#00B25A",
-                },
+              </ThemeIcon>
+            </a>
+            <a
+              style={{
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
               }}
+              href="https://www.linkedin.com/in/gerg%C5%91-p%C3%A1sztor-a0aa41214/"
+              target="_blank"
+              rel="noreferrer"
             >
-              <a
-                style={{
-                  height: "100%",
-                  display: "flex",
-                  alignItems: "center",
+              <ThemeIcon
+                variant="outline"
+                radius="xl"
+                sx={{
+                  borderColor: "#00B25A",
+                  borderWidth: "2px",
+                  width: "3.5rem",
+                  height: "3.5rem",
+                  transition: "all 300ms ease-in-out",
+                  "&:hover": {
+                    background: "#00B25A",
+                  },
                 }}
-                href="https://www.linkedin.com/in/gerg%C5%91-p%C3%A1sztor-a0aa41214/"
-                target="_blank"
-                rel="noreferrer"
               >
                 <SiLinkedin size={24} />
-              </a>
-            </ThemeIcon>
-            <ThemeIcon
-              variant="outline"
-              radius="xl"
-              sx={{
-                borderColor: "#00B25A",
-                borderWidth: "2px",
-                width: "3.5rem",
-                height: "3.5rem",
-                transition: "all 300ms ease-in-out",
-                "&:hover": {
-                  background: "#00B25A",
-                },
+              </ThemeIcon>
+            </a>
+            <a
+              style={{
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
               }}
+              href="mailto:pasztorg@gmail.com"
+              rel="noreferrer"
             >
-              <a
-                style={{
-                  height: "100%",
-                  display: "flex",
-                  alignItems: "center",
+              <ThemeIcon
+                variant="outline"
+                radius="xl"
+                sx={{
+                  borderColor: "#00B25A",
+                  borderWidth: "2px",
+                  width: "3.5rem",
+                  height: "3.5rem",
+                  transition: "all 300ms ease-in-out",
+                  "&:hover": {
+                    background: "#00B25A",
+                  },
                 }}
-                href="mailto:pasztorg@gmail.com"
-                rel="noreferrer"
               >
                 <FaAt size={24} />
-              </a>
-            </ThemeIcon>
+              </ThemeIcon>
+            </a>
           </Group>
         </motion.div>
       </Group>
