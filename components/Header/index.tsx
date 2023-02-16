@@ -78,66 +78,66 @@ export default function Header() {
                   className={classes.link}
                   sx={{
                     borderBottom:
-                      scrollPos.y <= 350 ? "2px solid #00B25A" : "none",
-                    opacity: scrollPos.y <= 350 ? 1 : 0.6,
+                      scrollPos.y < 700 ? "2px solid #00B25A" : "none",
+                    opacity: scrollPos.y < 700 ? 1 : 0.6,
                     maxWidth: "fit-content",
                   }}
                 >
                   Home
                 </UnstyledButton>
                 <UnstyledButton
-                  onClick={() => scrollTo({ y: 600 })}
+                  onClick={() => scrollTo({ y: 800 })}
                   className={classes.link}
                   sx={{
                     borderBottom:
-                      scrollPos.y <= 1000 && scrollPos.y > 350
+                      scrollPos.y <= 1400 && scrollPos.y > 700
                         ? "2px solid #00B25A"
                         : "none",
-                    opacity: scrollPos.y <= 1000 && scrollPos.y > 350 ? 1 : 0.6,
+                    opacity: scrollPos.y <= 1400 && scrollPos.y > 700 ? 1 : 0.6,
                     maxWidth: "fit-content",
                   }}
                 >
                   About
                 </UnstyledButton>
                 <UnstyledButton
-                  onClick={() => scrollTo({ y: 1100 })}
+                  onClick={() => scrollTo({ y: 1500 })}
                   className={classes.link}
                   sx={{
                     borderBottom:
-                      scrollPos.y <= 1500 && scrollPos.y > 1000
+                      scrollPos.y <= 2100 && scrollPos.y > 1400
                         ? "2px solid #00B25A"
                         : "none",
                     opacity:
-                      scrollPos.y <= 1500 && scrollPos.y > 1000 ? 1 : 0.6,
+                      scrollPos.y <= 2100 && scrollPos.y > 1400 ? 1 : 0.6,
                     maxWidth: "fit-content",
                   }}
                 >
                   Skills
                 </UnstyledButton>
                 <UnstyledButton
-                  onClick={() => scrollTo({ y: 1600 })}
+                  onClick={() => scrollTo({ y: 2200 })}
                   className={classes.link}
                   sx={{
                     borderBottom:
-                      scrollPos.y <= 2900 && scrollPos.y > 1500
+                      scrollPos.y <= 3400 && scrollPos.y > 2100
                         ? "2px solid #00B25A"
                         : "none",
                     opacity:
-                      scrollPos.y <= 2900 && scrollPos.y > 1500 ? 1 : 0.6,
+                      scrollPos.y <= 3400 && scrollPos.y > 2100 ? 1 : 0.6,
                     maxWidth: "fit-content",
                   }}
                 >
                   Projects
                 </UnstyledButton>
                 <UnstyledButton
-                  onClick={() => scrollTo({ y: 3100 })}
+                  onClick={() => scrollTo({ y: 3500 })}
                   className={classes.link}
                   sx={{
                     borderBottom:
-                      scrollPos.y > 2900 && scrollPos.y < 3600
+                      scrollPos.y > 3400 && scrollPos.y < 3800
                         ? "2px solid #00B25A"
                         : "none",
-                    opacity: scrollPos.y > 2900 && scrollPos.y < 3600 ? 1 : 0.6,
+                    opacity: scrollPos.y > 3400 && scrollPos.y < 3800 ? 1 : 0.6,
                     maxWidth: "fit-content",
                   }}
                 >
@@ -166,60 +166,65 @@ export default function Header() {
                 className={classes.link}
                 sx={{
                   borderBottom:
-                    scrollPos.y <= 350 ? "2px solid #00B25A" : "none",
-                  opacity: scrollPos.y <= 350 ? 1 : 0.6,
+                    scrollPos.y < 700 ? "2px solid #00B25A" : "none",
+                  opacity: scrollPos.y < 700 ? 1 : 0.6,
+                  maxWidth: "fit-content",
                 }}
               >
                 Home
               </UnstyledButton>
               <UnstyledButton
-                onClick={() => scrollTo({ y: 600 })}
+                onClick={() => scrollTo({ y: 800 })}
                 className={classes.link}
                 sx={{
                   borderBottom:
-                    scrollPos.y <= 1000 && scrollPos.y > 350
+                    scrollPos.y <= 1400 && scrollPos.y > 700
                       ? "2px solid #00B25A"
                       : "none",
-                  opacity: scrollPos.y <= 1000 && scrollPos.y > 350 ? 1 : 0.6,
+                  opacity: scrollPos.y <= 1400 && scrollPos.y > 700 ? 1 : 0.6,
+                  maxWidth: "fit-content",
                 }}
               >
                 About
               </UnstyledButton>
               <UnstyledButton
-                onClick={() => scrollTo({ y: 1100 })}
+                onClick={() => scrollTo({ y: 1500 })}
                 className={classes.link}
                 sx={{
                   borderBottom:
-                    scrollPos.y <= 1500 && scrollPos.y > 1000
+                    scrollPos.y <= 2100 && scrollPos.y > 1400
                       ? "2px solid #00B25A"
                       : "none",
-                  opacity: scrollPos.y <= 1500 && scrollPos.y > 1000 ? 1 : 0.6,
+                  opacity: scrollPos.y <= 2100 && scrollPos.y > 1400 ? 1 : 0.6,
+                  maxWidth: "fit-content",
                 }}
               >
                 Skills
               </UnstyledButton>
               <UnstyledButton
-                onClick={() => scrollTo({ y: 1600 })}
+                onClick={() => scrollTo({ y: 2200 })}
                 className={classes.link}
                 sx={{
                   borderBottom:
-                    scrollPos.y <= 2900 && scrollPos.y > 1500
+                    scrollPos.y <= 3400 && scrollPos.y > 2100
                       ? "2px solid #00B25A"
                       : "none",
-                  opacity: scrollPos.y <= 2900 && scrollPos.y > 1500 ? 1 : 0.6,
+                  opacity: scrollPos.y <= 3400 && scrollPos.y > 2100 ? 1 : 0.6,
+                  maxWidth: "fit-content",
                 }}
               >
                 Projects
               </UnstyledButton>
               <UnstyledButton
-                onClick={() => scrollTo({ y: 3100 })}
+                onClick={() => scrollTo({ y: 3500 })}
                 className={classes.link}
                 sx={{
                   borderBottom:
-                    scrollPos.y > 2900 && scrollPos.y < 3600
+                    scrollPos.y > 3400 && scrollPos.y < 3800
                       ? "2px solid #00B25A"
                       : "none",
-                  opacity: scrollPos.y > 2900 && scrollPos.y < 3600 ? 1 : 0.6,
+                  opacity: scrollPos.y > 3400 && scrollPos.y < 3800 ? 1 : 0.6,
+                  maxWidth: "fit-content",
                 }}
               >
                 Testimonials
