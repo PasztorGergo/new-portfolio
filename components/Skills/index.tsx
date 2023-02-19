@@ -73,7 +73,7 @@ export default function Skills({}: Props) {
             </Title>
             <Group position="center" p="lg">
               {frontend.map(({ name, icon }) => (
-                <Stack align="center">
+                <Stack align="center" key={name}>
                   {icon}
                   <Text sx={{ fontWeight: "bold" }}>{name}</Text>
                 </Stack>
@@ -96,7 +96,7 @@ export default function Skills({}: Props) {
             </Title>
             <Group position="center" p="lg">
               {backend.map(({ name, icon }) => (
-                <Stack align="center">
+                <Stack align="center" key={name}>
                   {icon}
                   <Text sx={{ fontWeight: "bold" }}>{name}</Text>
                 </Stack>
@@ -119,7 +119,7 @@ export default function Skills({}: Props) {
             </Title>
             <Group position="center" p="lg">
               {others.map(({ name, icon }) => (
-                <Stack align="center">
+                <Stack align="center" key={name}>
                   {icon}
                   <Text sx={{ fontWeight: "bold" }}>{name}</Text>
                 </Stack>
@@ -153,7 +153,7 @@ export default function Skills({}: Props) {
             </Title>
             <Group align="center" position="center" p="lg">
               {backend.map(({ name, icon }) => (
-                <Stack align="center">
+                <Stack align="center" key={name}>
                   {icon}
                   <Text sx={{ fontWeight: "bold" }}>{name}</Text>
                 </Stack>
@@ -179,7 +179,7 @@ export default function Skills({}: Props) {
             </Title>
             <Group align="center" position="center" p="lg">
               {frontend.map(({ name, icon }) => (
-                <Stack align="center">
+                <Stack align="center" key={name}>
                   {icon}
                   <Text sx={{ fontWeight: "bold" }}>{name}</Text>
                 </Stack>
@@ -205,7 +205,7 @@ export default function Skills({}: Props) {
             </Title>
             <Group align="center" position="center" p="lg">
               {others.map(({ name, icon }) => (
-                <Stack align="center">
+                <Stack align="center" key={name}>
                   {icon}
                   <Text sx={{ fontWeight: "bold" }}>{name}</Text>
                 </Stack>
