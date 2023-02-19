@@ -54,7 +54,7 @@ export default function Testimonials() {
       ),
     },
     {
-      contact: "https://twitter.com/denicmarko",
+      contact: "https://markodenic.com",
       name: "Marko Denic",
       profilePicture: "/MarkoDenic.jpg",
       role: "Software Engineer, Twitter Creator",
