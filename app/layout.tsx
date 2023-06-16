@@ -1,12 +1,11 @@
 "use client";
 
-import { AppShell, Global } from "@mantine/core";
 import React from "react";
-import { Footer, Header } from "../components";
+import { Footer, Header } from "components";
 import "../styles/globals.css";
 import { Nunito } from "@next/font/google";
 
-const nunito = Nunito({ subsets: ["latin-ext"] });
+const nunito = Nunito({ subsets: ["latin-ext", "latin"] });
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
