@@ -18,12 +18,7 @@ import { FaAt } from "react-icons/fa";
 
 const useStyles = createStyles((theme) => ({
   title: {
-    [theme.fn.largerThan("md")]: {
-      fontSize: "5rem !important",
-    },
-    [theme.fn.largerThan("sm")]: {
-      fontSize: "3rem",
-    },
+    fontSize: "clamp(24px, 10vw, 96px)",
   },
   [theme.fn.largerThan("xs")]: {
     fontSize: "2.5rem",
@@ -59,29 +54,11 @@ export default function Hero() {
     <section className={classes.section}>
       <Group position="apart" sx={{ height: "100%" }}>
         <Box>
-          <motion.div
-            custom={1}
-            initial={{ opacity: 0, x: "-100%" }}
-            animate={controls}
-          >
-            <Text size="xl" color="#00B25A" weight="600">
-              Greetings! 👋 My name is
-            </Text>
-          </motion.div>
-          <motion.div
-            custom={2}
-            initial={{ opacity: 0, x: "-100%" }}
-            animate={controls}
-          >
-            <Title className={classes.title}>Gergő Pásztor</Title>
-          </motion.div>
-          <motion.div
-            custom={3}
-            initial={{ opacity: 0, x: "-100%" }}
-            animate={controls}
-          >
-            <Text>I create unique websites, and applications.</Text>
-          </motion.div>
+          <Text size="xl" color="#ffffff" weight="bold">
+            Greetings! 👋 My name is
+          </Text>
+          <Title className={classes.title}>Gergő Pásztor</Title>
+          <Text>I create unique websites, and applications.</Text>
           <motion.div
             custom={6}
             initial={{ opacity: 0, y: "100%" }}

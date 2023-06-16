@@ -4,28 +4,17 @@ import { AppShell, Global } from "@mantine/core";
 import React from "react";
 import { Footer, Header } from "../components";
 import "../styles/globals.css";
-import { Inter } from "@next/font/google";
+import { Nunito } from "@next/font/google";
 
-const inter = Inter();
+const nunito = Nunito({ subsets: ["latin-ext"] });
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html>
-      <body className={inter.className}>
-        <Global
-          styles={{
-            "*": {
-              color: "#fff",
-            },
-            a: {
-              padding: "0.1rem",
-              textDecoration: "none",
-            },
-          }}
-        />
-        <AppShell footer={<Footer />} header={<Header />}>
-          {children}
-        </AppShell>
+    <html className="text-white">
+      <body className={nunito.className}>
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   );

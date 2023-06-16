@@ -34,205 +34,29 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function Header() {
+export default function Navbar() {
   const [open, setOpen] = useState<boolean>(false);
   const [scrollPos, scrollTo] = useWindowScroll();
   const breakpoint = useMediaQuery("(min-width: 768px)", false);
   const controls = useAnimation();
 
-  useEffect(() => {
-    if (open) controls.start({ scaleY: 1, transformOrigin: "top" });
-    else controls.start({ scaleY: 0, transformOrigin: "top" });
-  }, [open]);
-
-  const { classes } = useStyles();
   return (
-    <H fixed className={classes.header} height="min-content" py="lg">
-      <Group
-        align="center"
-        position="apart"
-        sx={{ margin: `0 ${breakpoint ? "6rem" : "1rem"}` }}
-      >
-        <MediaQuery styles={{ display: "none" }} largerThan="md">
-          <Box sx={{ width: "100%" }}>
-            <Group align="center" position="apart">
-              <Image
-                src="/favicon.svg"
-                alt="Gergő Pásztor's logo"
-                width="64"
-                height="64"
-              />
-              <Title className={classes.name} order={3}>
-                Gergő Pásztor
-              </Title>
-              <Burger
-                color="#00B25A"
-                opened={open}
-                onClick={() => setOpen((prev) => !prev)}
-              />
-            </Group>
-            <motion.div initial={{ scaleY: 0 }} animate={controls}>
-              <Stack sx={{ display: open ? "flex" : "none" }}>
-                <UnstyledButton
-                  onClick={() => scrollTo({ y: 0 })}
-                  className={classes.link}
-                  sx={{
-                    borderBottom:
-                      scrollPos.y < 700 ? "2px solid #00B25A" : "none",
-                    opacity: scrollPos.y < 700 ? 1 : 0.6,
-                    maxWidth: "fit-content",
-                  }}
-                >
-                  Home
-                </UnstyledButton>
-                <UnstyledButton
-                  onClick={() => scrollTo({ y: 800 })}
-                  className={classes.link}
-                  sx={{
-                    borderBottom:
-                      scrollPos.y <= 1400 && scrollPos.y > 700
-                        ? "2px solid #00B25A"
-                        : "none",
-                    opacity: scrollPos.y <= 1400 && scrollPos.y > 700 ? 1 : 0.6,
-                    maxWidth: "fit-content",
-                  }}
-                >
-                  About
-                </UnstyledButton>
-                <UnstyledButton
-                  onClick={() => scrollTo({ y: 1500 })}
-                  className={classes.link}
-                  sx={{
-                    borderBottom:
-                      scrollPos.y <= 2100 && scrollPos.y > 1400
-                        ? "2px solid #00B25A"
-                        : "none",
-                    opacity:
-                      scrollPos.y <= 2100 && scrollPos.y > 1400 ? 1 : 0.6,
-                    maxWidth: "fit-content",
-                  }}
-                >
-                  Skills
-                </UnstyledButton>
-                <UnstyledButton
-                  onClick={() => scrollTo({ y: 2200 })}
-                  className={classes.link}
-                  sx={{
-                    borderBottom:
-                      scrollPos.y <= 3400 && scrollPos.y > 2100
-                        ? "2px solid #00B25A"
-                        : "none",
-                    opacity:
-                      scrollPos.y <= 3400 && scrollPos.y > 2100 ? 1 : 0.6,
-                    maxWidth: "fit-content",
-                  }}
-                >
-                  Projects
-                </UnstyledButton>
-                <UnstyledButton
-                  onClick={() => scrollTo({ y: 3500 })}
-                  className={classes.link}
-                  sx={{
-                    borderBottom:
-                      scrollPos.y > 3400 && scrollPos.y < 3800
-                        ? "2px solid #00B25A"
-                        : "none",
-                    opacity: scrollPos.y > 3400 && scrollPos.y < 3800 ? 1 : 0.6,
-                    maxWidth: "fit-content",
-                  }}
-                >
-                  Testimonials
-                </UnstyledButton>
-              </Stack>
-            </motion.div>
-          </Box>
-        </MediaQuery>
-        <MediaQuery styles={{ display: "none" }} smallerThan="md">
-          <Group position="apart" sx={{ width: "100%" }}>
-            <Group align="center">
-              <Image
-                src="/favicon.svg"
-                alt="Gergő Pásztor's logo"
-                width="64"
-                height="64"
-              />
-              <Title className={classes.name} order={3}>
-                Gergő Pásztor
-              </Title>
-            </Group>
-            <Group position="right" sx={{ gap: "3rem" }}>
-              <UnstyledButton
-                onClick={() => scrollTo({ y: 0 })}
-                className={classes.link}
-                sx={{
-                  borderBottom:
-                    scrollPos.y < 700 ? "2px solid #00B25A" : "none",
-                  opacity: scrollPos.y < 700 ? 1 : 0.6,
-                  maxWidth: "fit-content",
-                }}
-              >
-                Home
-              </UnstyledButton>
-              <UnstyledButton
-                onClick={() => scrollTo({ y: 800 })}
-                className={classes.link}
-                sx={{
-                  borderBottom:
-                    scrollPos.y <= 1400 && scrollPos.y > 700
-                      ? "2px solid #00B25A"
-                      : "none",
-                  opacity: scrollPos.y <= 1400 && scrollPos.y > 700 ? 1 : 0.6,
-                  maxWidth: "fit-content",
-                }}
-              >
-                About
-              </UnstyledButton>
-              <UnstyledButton
-                onClick={() => scrollTo({ y: 1500 })}
-                className={classes.link}
-                sx={{
-                  borderBottom:
-                    scrollPos.y <= 2100 && scrollPos.y > 1400
-                      ? "2px solid #00B25A"
-                      : "none",
-                  opacity: scrollPos.y <= 2100 && scrollPos.y > 1400 ? 1 : 0.6,
-                  maxWidth: "fit-content",
-                }}
-              >
-                Skills
-              </UnstyledButton>
-              <UnstyledButton
-                onClick={() => scrollTo({ y: 2200 })}
-                className={classes.link}
-                sx={{
-                  borderBottom:
-                    scrollPos.y <= 3400 && scrollPos.y > 2100
-                      ? "2px solid #00B25A"
-                      : "none",
-                  opacity: scrollPos.y <= 3400 && scrollPos.y > 2100 ? 1 : 0.6,
-                  maxWidth: "fit-content",
-                }}
-              >
-                Projects
-              </UnstyledButton>
-              <UnstyledButton
-                onClick={() => scrollTo({ y: 3500 })}
-                className={classes.link}
-                sx={{
-                  borderBottom:
-                    scrollPos.y > 3400 && scrollPos.y < 3800
-                      ? "2px solid #00B25A"
-                      : "none",
-                  opacity: scrollPos.y > 3400 && scrollPos.y < 3800 ? 1 : 0.6,
-                  maxWidth: "fit-content",
-                }}
-              >
-                Testimonials
-              </UnstyledButton>
-            </Group>
-          </Group>
-        </MediaQuery>
-      </Group>
-    </H>
+    <nav className="w-full py-4 px-16 flex flex-row justify-between items-center">
+      <Image alt="Logo" src="/favicon.svg" width={50.41} height={50.25} />
+      <ul className="flex justify-between items-center grow-[0.25]">
+        <li className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm">
+          Home
+        </li>
+        <li className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm">
+          About
+        </li>
+        <li className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm">
+          Projects
+        </li>
+        <li className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm">
+          Testimonails
+        </li>
+      </ul>
+    </nav>
   );
 }
