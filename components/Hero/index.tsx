@@ -2,7 +2,7 @@
 
 import Role from "components/Role";
 import { motion, MotionValue, useSpring, useTransform } from "framer-motion";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 const roles: Array<string> = [
   "Developer 👨‍💻",
@@ -11,19 +11,12 @@ const roles: Array<string> = [
 ];
 
 export default function Hero() {
-  const motionValue = useSpring(1);
+  const [role, setRole] = useState<number>(0);
 
   useEffect(() => {
-    const mv = motionValue.get();
-    const inter = setInterval(
-      () => motionValue.set(mv === 3 ? 0 : mv + 1),
-      1000
-    );
-
-    inter;
-
-    return () => clearInterval(inter);
-  }, [motionValue]);
+    setTimeout(() => setRole((x) => (x + 1 > 2 ? 0 : x + 1)), 3000);
+    console.log(role);
+  }, [role]);
 
   return (
     <header className="flex flex-col px-16 items-center justify-start md:pt-32 gap-8 text-center h-screen">
@@ -35,7 +28,7 @@ export default function Hero() {
       </h1>
       <div className="relative w-full">
         {roles.map((x, i) => (
-          <Role mv={motionValue} number={i}>
+          <Role mv={role} number={i} key={i + role}>
             {x}
           </Role>
         ))}
