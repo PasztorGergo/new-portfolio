@@ -11,7 +11,7 @@ const roles: Array<string> = [
 
 export default function Hero() {
   return (
-    <header className="flex flex-col px-16 items-center justify-start md:pt-32 gap-8 text-center h-screen">
+    <header className="flex flex-col px-4 md:px-16 items-center justify-start md:pt-32 gap-8 text-center h-screen">
       <h2 className="text-[clamp(24px,10vw,1.5rem)] font-bold">
         Greetings 👋 My name is
       </h2>
@@ -24,7 +24,7 @@ export default function Hero() {
             {roles.map((role) => (
               <li
                 key={role}
-                className="flex items-center font-bold justify-center text-[clamp(24px,10vw,1.5rem)] text-center"
+                className="flex items-center font-bold justify-center text-[clamp(20px,6vw,1.5rem)] text-center"
               >
                 {role}
               </li>
@@ -32,6 +32,12 @@ export default function Hero() {
           </ul>
         </div>
       </div>
+      <button
+        onClick={() => window.scrollTo({ top: 650, behavior: "smooth" })}
+        className="rounded-lg bg-brand text-white text-sm hover:bg-opacity-75 transition-all font-bold text-center px-4 py-3 uppercase mt-4"
+      >
+        Learn more
+      </button>
     </header>
   );
 }
