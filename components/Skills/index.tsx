@@ -126,11 +126,22 @@ function ParallaxText({ baseVelocity = 100 }: ParallaxProps) {
   );
 }
 
+//Glassmorphism and 3D cards
+
 export default function Skills() {
   return (
     <section>
       <SectionTitle>Skills</SectionTitle>
-      <ParallaxText baseVelocity={20}></ParallaxText>
+      <div className="flex flex-wrap items-center gap-4 justify-center">
+        {skills.map((skill) => (
+          <div className="flex flex-col w-32 h-32 text-[clamp(32px,10vw,3rem)] items-center justify-between bg-white bg-opacity-20 p-4 rounded-lg">
+            {skill.icon}
+            <h3 className="uppercase text-base font-bold text-center text-white text-opacity-80">
+              {skill.name}
+            </h3>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
