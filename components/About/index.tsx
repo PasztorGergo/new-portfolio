@@ -10,12 +10,12 @@ export default function About() {
   return (
     <header>
       <SectionTitle>About</SectionTitle>
-      <div className="flex justify-between items-center gap-8">
+      <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
-          className="flex flex-col justify-between w-1/2 gap-2"
+          className="flex flex-col justify-between w-full lg:w-1/2 gap-2"
           viewport={{ once: false }}
         >
           <motion.p variants={fadeIn("up", 12, 60)}>
@@ -52,7 +52,7 @@ export default function About() {
           alt="Gergő Pásztor's photo"
           width={720}
           height={634}
-          className="w-1/2 rounded-lg"
+          className="w-full sm:w-1/2 rounded-lg"
         />
       </div>
     </header>
