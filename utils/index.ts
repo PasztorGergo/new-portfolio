@@ -25,8 +25,8 @@ const fadeIn: (
       opacity: 0,
     },
     show: {
-      x: 0,
-      y: 0,
+      x: "0rem",
+      y: "0rem",
       opacity: 1,
       transition: {
         damping,

@@ -20,29 +20,29 @@ export default function Navbar() {
       <ul className="hidden md:flex justify-between items-center grow-[0.25]">
         <li
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm"
+          className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
         >
           Home
         </li>
         <li
           onClick={() => window.scrollTo({ top: 600, behavior: "smooth" })}
-          className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm"
+          className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
         >
           About
         </li>
         <li
           onClick={() => window.scrollTo({ top: 1200, behavior: "smooth" })}
-          className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm"
+          className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
         >
           Skills
         </li>
         <li
           onClick={() => window.scrollTo({ top: 1750, behavior: "smooth" })}
-          className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm"
+          className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
         >
           Projects
         </li>
-        <li className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm">
+        <li className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm">
           Testimonails
         </li>
       </ul>
@@ -66,16 +66,18 @@ export default function Navbar() {
               filter: "blur(1rem)",
               transition: { type: "tween", duration: 0.5 },
             }}
-            className="top-0 left-0 fixed w-full h-screen grid place-items-center"
+            className="top-0 left-0 fixed w-full h-screen grid place-items-center bg-[#1c1d22]"
           >
             <motion.ul
               variants={staggerContainer}
               initial="hidden"
               whileInView="show"
+              className="h-full flex flex-col items-center justify-center gap-8"
+              transition={{ delay: 0.3 }}
             >
               <motion.li
-                variants={fadeIn("right", 12, 60)}
-                className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm"
+                variants={fadeIn("left", 8, 40)}
+                className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
                 onClick={() => {
                   setOpen(false);
                   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -84,8 +86,8 @@ export default function Navbar() {
                 Home
               </motion.li>
               <motion.li
-                variants={fadeIn("right", 12, 60)}
-                className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm"
+                variants={fadeIn("left", 8, 40)}
+                className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
                 onClick={() => {
                   setOpen(false);
                   window.scrollTo({ top: 600, behavior: "smooth" });
@@ -94,8 +96,8 @@ export default function Navbar() {
                 About
               </motion.li>
               <motion.li
-                variants={fadeIn("right", 12, 60)}
-                className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm"
+                variants={fadeIn("left", 8, 40)}
+                className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
                 onClick={() => {
                   setOpen(false);
                   window.scrollTo({ top: 1200, behavior: "smooth" });
@@ -104,8 +106,8 @@ export default function Navbar() {
                 Skills
               </motion.li>
               <motion.li
-                variants={fadeIn("right", 12, 60)}
-                className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm"
+                variants={fadeIn("left", 8, 40)}
+                className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
                 onClick={() => {
                   setOpen(false);
                   window.scrollTo({ top: 1750, behavior: "smooth" });
@@ -114,8 +116,8 @@ export default function Navbar() {
                 Projects
               </motion.li>
               <motion.li
-                variants={fadeIn("right", 12, 60)}
-                className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm"
+                variants={fadeIn("left", 8, 40)}
+                className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
                 onClick={() => {
                   setOpen(false);
                   window.scrollTo({ top: 2300, behavior: "smooth" });
@@ -124,6 +126,10 @@ export default function Navbar() {
                 Testimonials
               </motion.li>
             </motion.ul>
+            <RiCloseFill
+              className="text-[32px] text-white absolute top-4 right-4"
+              onClick={() => setOpen(false)}
+            />
           </motion.div>
         )}
       </AnimatePresence>
