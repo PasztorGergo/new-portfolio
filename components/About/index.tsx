@@ -1,28 +1,34 @@
 "use client";
-import { Group, Stack, Text, Image } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
+import { motion } from "framer-motion";
 import React from "react";
 import Anchor from "../Anchor";
 import SectionTitle from "../SectionTitle";
+import Image from "next/image";
+import { fadeIn, staggerContainer } from "utils";
 
 export default function About() {
-  const breakpoint = useMediaQuery("(min-width: 750px)", false);
   return (
-    <section>
+    <header>
       <SectionTitle>About</SectionTitle>
-      <Group position="apart">
-        <Stack sx={{ width: breakpoint ? "50%" : "100%" }}>
-          <Text>
+      <div className="flex justify-between items-center gap-8">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          className="flex flex-col justify-between w-1/2 gap-2"
+          viewport={{ once: false }}
+        >
+          <motion.p variants={fadeIn("up", 12, 60)}>
             My name is <strong>Gergő</strong> Pásztor a full-stack web developer
             from Hungary.
-          </Text>
-          <Text>
+          </motion.p>
+          <motion.p variants={fadeIn("up", 12, 60)}>
             In my second year at Pattantyús-Ábrahám Géza Technical Secondary
             School, I built my first-ever website. It was the{" "}
             <strong>moment</strong> that changed my perspective and{" "}
             <strong>incentivized</strong> me to go deeper into this hole.
-          </Text>
-          <Text>
+          </motion.p>
+          <motion.p variants={fadeIn("up", 12, 60)}>
             <strong>2022</strong> was the year that extremely affected me. I
             built <strong>relationships</strong> with people on Twitter and
             completed my first{" "}
@@ -30,26 +36,25 @@ export default function About() {
               freelance work
             </Anchor>
             .
-          </Text>
-          <Text>
+          </motion.p>
+          <motion.p variants={fadeIn("up", 12, 60)}>
             Experiences like these made me build side projects and get in touch
             with other creators.
-          </Text>
-          <Text>
+          </motion.p>
+          <motion.p variants={fadeIn("up", 12, 60)}>
             If reading all of these got your attention, check out my{" "}
             <Anchor href={1000}>work</Anchor> below, and be the next one with
             who I will collaborate.
-          </Text>
-        </Stack>
+          </motion.p>
+        </motion.div>
         <Image
-          src="/gergo.png"
-          radius="sm"
+          src="/gergo.webp"
           alt="Gergő Pásztor's photo"
-          width={breakpoint ? "30vw" : "90%"}
-          height={breakpoint ? "35vw" : "25rem"}
-          sx={{ marginRight: "0" }}
+          width={720}
+          height={634}
+          className="w-1/2 rounded-lg"
         />
-      </Group>
-    </section>
+      </div>
+    </header>
   );
 }

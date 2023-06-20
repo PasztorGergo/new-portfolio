@@ -25,7 +25,18 @@ const HomeHead = () => {
       />
       <meta name="twitter:image" content="/gergo.webp" />
       <meta name="og:image" content="/gergo.webp" />
-      <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      <link
+        rel="icon"
+        href="/favicon.svg"
+        type="image/svg+xml"
+        media="(prefers-color-scheme: dark)"
+      />
+      <link
+        rel="icon"
+        href="/faviconLight.svg"
+        type="image/svg+xml"
+        media="(prefers-color-scheme: light)"
+      />
       <link rel="apple-touch-icon" href="/favicon.svg" />
       <link rel="apple-touch-icon-precomposed" href="/favicon.svg" />
     </>

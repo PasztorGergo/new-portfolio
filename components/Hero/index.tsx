@@ -20,7 +20,7 @@ export default function Hero() {
       </h1>
       <div className="flex items-center">
         <div className="max-h-8 overflow-hidden">
-          <ul className="mx-1 animate-[scrollUp_4s_infinite]">
+          <ul className="mx-1 animate-[scrollUp_6s_infinite]">
             {roles.map((role) => (
               <li
                 key={role}

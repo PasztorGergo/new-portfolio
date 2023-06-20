@@ -17,13 +17,28 @@ export default function Navbar() {
     >
       <Image alt="Logo" src="/favicon.svg" width={50.41} height={50.25} />
       <ul className="flex justify-between items-center grow-[0.25]">
-        <li className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm">
+        <li
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm"
+        >
           Home
         </li>
-        <li className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm">
+        <li
+          onClick={() => window.scrollTo({ top: 600, behavior: "smooth" })}
+          className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm"
+        >
           About
         </li>
-        <li className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm">
+        <li
+          onClick={() => window.scrollTo({ top: 1200, behavior: "smooth" })}
+          className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm"
+        >
+          Skills
+        </li>
+        <li
+          onClick={() => window.scrollTo({ top: 1750, behavior: "smooth" })}
+          className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm"
+        >
           Projects
         </li>
         <li className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 opacity-75 hover:opacity-100 cursor-pointer transition-all duration-100 text-sm">
