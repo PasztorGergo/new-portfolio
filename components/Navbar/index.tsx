@@ -8,7 +8,7 @@ import { fadeIn, staggerContainer } from "utils";
 
 export default function Navbar() {
   const [open, setOpen] = useState<boolean>(false);
-  const scrollPos = window.scrollY;
+  const scrollPos = window?.scrollY;
 
   return (
     <nav
@@ -19,25 +19,25 @@ export default function Navbar() {
       <Image alt="Logo" src="/favicon.svg" width={50.41} height={50.25} />
       <ul className="hidden md:flex justify-between items-center grow-[0.25]">
         <li
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={() => window?.scrollTo({ top: 0, behavior: "smooth" })}
           className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
         >
           Home
         </li>
         <li
-          onClick={() => window.scrollTo({ top: 600, behavior: "smooth" })}
+          onClick={() => window?.scrollTo({ top: 600, behavior: "smooth" })}
           className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
         >
           About
         </li>
         <li
-          onClick={() => window.scrollTo({ top: 1200, behavior: "smooth" })}
+          onClick={() => window?.scrollTo({ top: 1200, behavior: "smooth" })}
           className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
         >
           Skills
         </li>
         <li
-          onClick={() => window.scrollTo({ top: 1750, behavior: "smooth" })}
+          onClick={() => window?.scrollTo({ top: 1750, behavior: "smooth" })}
           className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
         >
           Projects
@@ -69,7 +69,7 @@ export default function Navbar() {
             className="top-0 left-0 fixed w-full h-screen grid place-items-center bg-[#1c1d22]"
           >
             <motion.ul
-              variants={staggerContainer}
+              variants={staggerContainer()}
               initial="hidden"
               whileInView="show"
               className="h-full flex flex-col items-center justify-center gap-8"
@@ -80,7 +80,7 @@ export default function Navbar() {
                 className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
                 onClick={() => {
                   setOpen(false);
-                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  window?.scrollTo({ top: 0, behavior: "smooth" });
                 }}
               >
                 Home
@@ -90,7 +90,7 @@ export default function Navbar() {
                 className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
                 onClick={() => {
                   setOpen(false);
-                  window.scrollTo({ top: 600, behavior: "smooth" });
+                  window?.scrollTo({ top: 600, behavior: "smooth" });
                 }}
               >
                 About
@@ -100,7 +100,7 @@ export default function Navbar() {
                 className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
                 onClick={() => {
                   setOpen(false);
-                  window.scrollTo({ top: 1200, behavior: "smooth" });
+                  window?.scrollTo({ top: 1200, behavior: "smooth" });
                 }}
               >
                 Skills
@@ -110,7 +110,7 @@ export default function Navbar() {
                 className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
                 onClick={() => {
                   setOpen(false);
-                  window.scrollTo({ top: 1750, behavior: "smooth" });
+                  window?.scrollTo({ top: 1750, behavior: "smooth" });
                 }}
               >
                 Projects
@@ -120,7 +120,7 @@ export default function Navbar() {
                 className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
                 onClick={() => {
                   setOpen(false);
-                  window.scrollTo({ top: 2300, behavior: "smooth" });
+                  window?.scrollTo({ top: 2300, behavior: "smooth" });
                 }}
               >
                 Testimonials

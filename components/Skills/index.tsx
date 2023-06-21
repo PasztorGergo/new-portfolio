@@ -24,6 +24,7 @@ import {
   useAnimationFrame,
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
+import { popUp, staggerContainer } from "utils";
 
 const skills: Array<{ name: string; icon: any }> = [
   { name: "HTML 5", icon: <DiHtml5 className="fill-[#F16529]" /> },
@@ -132,16 +133,25 @@ export default function Skills() {
   return (
     <section>
       <SectionTitle>Skills</SectionTitle>
-      <div className="flex flex-wrap items-center gap-4 justify-center">
+      <motion.div
+        variants={staggerContainer(0.075)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false }}
+        className="flex flex-wrap items-center gap-4 justify-center"
+      >
         {skills.map((skill) => (
-          <div className="flex flex-col w-32 h-32 text-[clamp(32px,10vw,3rem)] items-center justify-between bg-white bg-opacity-20 p-4 rounded-lg">
+          <motion.div
+            variants={popUp}
+            className="flex flex-col w-32 h-32 text-[clamp(32px,10vw,3rem)] items-center justify-between bg-white bg-opacity-[0.18] shadow-[0_8px_32px_0_#00B25A2d] border border-white border-opacity-[0.19] backdrop-blur p-4 rounded-lg"
+          >
             {skill.icon}
             <h3 className="uppercase text-base font-bold text-center text-white text-opacity-80">
               {skill.name}
             </h3>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

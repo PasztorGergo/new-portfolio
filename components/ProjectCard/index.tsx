@@ -22,6 +22,8 @@ import {
   SiTypescript,
   SiFirebase,
   SiGithub,
+  SiGraphql,
+  SiWordpress,
 } from "react-icons/si";
 import { useMediaQuery } from "@mantine/hooks";
 import { format } from "date-fns";
@@ -56,6 +58,8 @@ const icons = {
   Firebase: <SiFirebase size={20} key="Firebase" />,
   Node: <SiNodedotjs size={20} key="Node" />,
   Csharp: <SiCsharp size={20} key="CSharp" />,
+  GraphQL: <SiGraphql size={20} key="GraphQL" />,
+  WordPress: <SiWordpress size={20} key="WordPress" />,
 };
 
 type Props = {
@@ -75,6 +79,8 @@ type Props = {
     | "Firebase"
     | "Node"
     | "Csharp"
+    | "GraphQL"
+    | "WordPress"
   >;
   href: string;
   img: string;

@@ -12,7 +12,7 @@ export default function About() {
       <SectionTitle>About</SectionTitle>
       <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
         <motion.div
-          variants={staggerContainer}
+          variants={staggerContainer()}
           initial="hidden"
           whileInView="show"
           className="flex flex-col justify-between w-full lg:w-1/2 gap-2"
@@ -47,13 +47,21 @@ export default function About() {
             who I will collaborate.
           </motion.p>
         </motion.div>
-        <Image
-          src="/gergo.webp"
-          alt="Gergő Pásztor's photo"
-          width={720}
-          height={634}
-          className="w-full sm:w-1/2 rounded-lg"
-        />
+        <motion.div
+          variants={fadeIn("right", 12, 60)}
+          whileInView="show"
+          initial="hidden"
+          viewport={{ once: false }}
+          className="w-full sm:w-1/2 "
+        >
+          <Image
+            src="/gergo.webp"
+            alt="Gergő Pásztor's photo"
+            width={720}
+            height={634}
+            className="w-full rounded-lg"
+          />
+        </motion.div>
       </div>
     </header>
   );
