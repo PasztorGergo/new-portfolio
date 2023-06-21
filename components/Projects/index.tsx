@@ -87,11 +87,11 @@ export default function Projects() {
   return (
     <section>
       <SectionTitle>Projects</SectionTitle>
-      <Stack mt="xl" sx={{ gap: "3rem" }}>
+      <div className="flex overflow-hidden items-stretch justify-center gap-4">
         {projects.map((props) => (
           <ProjectCard {...props} />
         ))}
-      </Stack>
+      </div>
     </section>
   );
 }
