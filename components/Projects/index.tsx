@@ -1,7 +1,8 @@
 "use client";
 
-import { Stack } from "@mantine/core";
+import { motion } from "framer-motion";
 import React from "react";
+import { fadeIn, staggerContainer } from "utils";
 import ProjectCard from "../ProjectCard";
 import SectionTitle from "../SectionTitle";
 
@@ -33,7 +34,7 @@ const projects: Array<{
   alt: string;
 }> = [
   {
-    img: "/project/PratOMusic.webp",
+    img: "/project/practomusicCover.png",
     title: "Pract-o-music",
     desc: "Add your favorite songs from YouTube or import them from you device and play them everywhere with Pract-o-music!",
     tech: ["TypeScript", "Next", "React", "Tailwind"],
@@ -57,7 +58,7 @@ const projects: Array<{
     title: "Electrotechnical Collection, Hungary",
     desc: "Electrotechnical Collection, Hungary is a melting pot of lamps and electronic tools gathered by Levente Csíkász.",
     tech: ["TypeScript", "Next", "React", "GraphQL", "WordPress"],
-    href: "https://gradicol.vercel.app",
+    href: "https://villamostechnikai-gyujtemeny.vercel.app/",
     status: "since",
     alt: "Electrotechnical Collection, Hungary",
     date: new Date(2023, 0),
@@ -85,13 +86,45 @@ const projects: Array<{
 
 export default function Projects() {
   return (
-    <section>
-      <SectionTitle>Projects</SectionTitle>
-      <div className="flex overflow-hidden items-stretch justify-center gap-4">
+    <section className="overflow-hidden grid grid-cols-2 grid-rows-[auto] gap-8">
+      <SectionTitle className="row-start-1 col-start-1 col-span-2">
+        Projects
+      </SectionTitle>
+      <div className="row-start-2 col-start-1 col-span-2 flex lg:hidden flex-col overflow-hidden items-stretch justify-center gap-8">
         {projects.map((props) => (
           <ProjectCard {...props} />
         ))}
       </div>
+      <motion.div
+        initial="hidden"
+        variants={staggerContainer()}
+        className="hidden w-full h-fit lg:flex flex-col gap-8 row-start-2 col-start-1"
+      >
+        {projects.slice(0, 3).map((props) => (
+          <motion.div
+            viewport={{ once: false, amount: 0.25 }}
+            variants={fadeIn("up", 12, 60)}
+            whileInView="show"
+          >
+            <ProjectCard {...props} />
+          </motion.div>
+        ))}
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        variants={staggerContainer()}
+        className="hidden w-full h-fit lg:flex flex-col gap-8 row-start-2 col-start-2"
+      >
+        {projects.slice(3).map((props) => (
+          <motion.div
+            viewport={{ once: false, amount: 0.25 }}
+            variants={fadeIn("up", 12, 60)}
+            whileInView="show"
+          >
+            <ProjectCard {...props} />
+          </motion.div>
+        ))}
+      </motion.div>
     </section>
   );
 }

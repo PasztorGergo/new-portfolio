@@ -8,7 +8,7 @@ import { fadeIn, staggerContainer } from "utils";
 
 export default function Navbar() {
   const [open, setOpen] = useState<boolean>(false);
-  const scrollPos = window?.scrollY;
+  const scrollPos = window && window?.scrollY;
 
   return (
     <nav

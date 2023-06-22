@@ -77,7 +77,7 @@ export default function ProjectCard({
 }: Props) {
   return (
     <div
-      className={`bg-[hsl(230,10%,22%)] p-4 flex flex-col items-center justify-between ${
+      className={`bg-[hsl(230,10%,22%)] p-4 flex flex-col items-center gap-4 justify-between ${
         highLight ? "0px 0px 1rem -0.5rem #00B25A" : "none"
       } rounded-lg`}
     >
@@ -97,7 +97,7 @@ export default function ProjectCard({
             `Launched in ${format(date, "LLLL yyyy")}`
           : "Under construction"}
       </p>
-      <div className="flex items-center justify-start gap-4">
+      <div className="flex flex-wrap items-center justify-center gap-4">
         {tech.map((x, i) => (
           <div className="flex items-center gap-1" key={i}>
             {icons[x]} <p className="font-bold text-sm">{x}</p>
