@@ -92,7 +92,7 @@ export default function Projects() {
       </SectionTitle>
       <div className="row-start-2 col-start-1 col-span-2 flex lg:hidden flex-col overflow-hidden items-stretch justify-center gap-8">
         {projects.map((props) => (
-          <ProjectCard {...props} />
+          <ProjectCard key={props.title} {...props} />
         ))}
       </div>
       <motion.div
@@ -105,6 +105,7 @@ export default function Projects() {
             viewport={{ once: false, amount: 0.25 }}
             variants={fadeIn("up", 12, 60)}
             whileInView="show"
+            key={props.title}
           >
             <ProjectCard {...props} />
           </motion.div>
@@ -120,6 +121,7 @@ export default function Projects() {
             viewport={{ once: false, amount: 0.25 }}
             variants={fadeIn("up", 12, 60)}
             whileInView="show"
+            key={props.title}
           >
             <ProjectCard {...props} />
           </motion.div>
