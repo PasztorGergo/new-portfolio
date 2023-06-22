@@ -1,16 +1,7 @@
 "use client";
-import {
-  Button,
-  createStyles,
-  Group,
-  Paper,
-  Stack,
-  Text,
-  Title,
-  Image,
-} from "@mantine/core";
 import React from "react";
 import { AiOutlineLink } from "react-icons/ai";
+import Image from "next/image";
 
 import { DiHtml5, DiCss3, DiSass, DiReact, DiMongodb } from "react-icons/di";
 import {
@@ -22,26 +13,10 @@ import {
   SiTypescript,
   SiFirebase,
   SiGithub,
+  SiGraphql,
+  SiWordpress,
 } from "react-icons/si";
-import { useMediaQuery } from "@mantine/hooks";
 import { format } from "date-fns";
-
-const useStyles = createStyles((theme) => ({
-  paper: {
-    background: "#ffffff0a",
-  },
-  button: {
-    background: "#00B25A",
-    "&:hover": {
-      background: theme.fn.darken("#00B25A", 0.1),
-    },
-  },
-  title: {
-    borderLeft: "4px solid #00B25A",
-    paddingLeft: "1rem",
-    textTransform: "capitalize",
-  },
-}));
 
 const icons = {
   HTML: <DiHtml5 size={20} key="HTML" />,
@@ -56,6 +31,8 @@ const icons = {
   Firebase: <SiFirebase size={20} key="Firebase" />,
   Node: <SiNodedotjs size={20} key="Node" />,
   Csharp: <SiCsharp size={20} key="CSharp" />,
+  GraphQL: <SiGraphql size={20} key="GraphQL" />,
+  WordPress: <SiWordpress size={20} key="WordPress" />,
 };
 
 type Props = {
@@ -75,13 +52,14 @@ type Props = {
     | "Firebase"
     | "Node"
     | "Csharp"
+    | "GraphQL"
+    | "WordPress"
   >;
   href: string;
   img: string;
   source?: string;
   desc: string;
   highLight?: boolean;
-  position?: "left" | "right";
   alt: string;
 };
 
@@ -95,85 +73,50 @@ export default function ProjectCard({
   href,
   source,
   highLight,
-  position,
   alt,
 }: Props) {
-  const { classes } = useStyles();
-  const breakpoint = useMediaQuery("(min-width: 808px)", false);
-
   return (
-    <Paper
-      sx={{ boxShadow: highLight ? "0px 0px 1rem -0.5rem #00B25A" : "none" }}
-      radius="sm"
-      className={classes.paper}
-      p="xl"
+    <div
+      className={`bg-[hsl(230,10%,22%)] p-4 flex flex-col items-center gap-4 justify-between ${
+        highLight ? "0px 0px 1rem -0.5rem #00B25A" : "none"
+      } rounded-lg`}
     >
-      <Group
-        grow
-        sx={{
-          flexDirection: breakpoint
-            ? position === "right"
-              ? "row-reverse"
-              : "row"
-            : "column",
-        }}
-        direction={breakpoint ? "row" : "column"}
-        position="apart"
-      >
-        <Image
-          src={img}
-          alt={alt}
-          mx={breakpoint ? "0" : "auto"}
-          radius="sm"
-          height="40vh"
-          sx={{ maxWidth: breakpoint ? "40%" : "100%" }}
-        />
-        <Stack align="start" sx={{ width: "100%" }}>
-          <Text transform="uppercase" color="#00B25A">
-            {status === "fresh"
-              ? "Just kicked off"
-              : status === "since"
-              ? //@ts-ignore
-                `Launched in ${format(date, "LLLL yyyy")}`
-              : "Under construction"}
-          </Text>
-          <Title className={classes.title} order={2}>
-            {title}
-          </Title>
-          <Group>
-            {tech.map((x, i) => (
-              <Group position="left" sx={{ gap: "0.2rem" }} key={i}>
-                {icons[x]} <Text weight={600}>{x}</Text>
-              </Group>
-            ))}
-          </Group>
-          <Text>{desc}</Text>
-          <Group>
-            <Button
-              className={classes.button}
-              component="a"
-              href={href}
-              target="_blank"
-              leftIcon={<AiOutlineLink size={24} />}
-            >
-              {href.replace("https://", "").length > 24
-                ? `${href.replace("https://", "").slice(0, 24)}...`
-                : href.replace("https://", "")}
-            </Button>
-            {source && (
-              <Button
-                className={classes.button}
-                component="a"
-                target="_blank"
-                href={source}
-                leftIcon={<SiGithub size={24} />}
-              >
-                Source
-              </Button>
-            )}
-          </Group>
-        </Stack>
-      </Group>
-    </Paper>
+      <Image
+        width={1600}
+        height={900}
+        src={img}
+        alt={alt}
+        className="w-auto h-48 rounded-lg"
+      />
+      <h2 className="font-bold text-center text-xl tracking-wide">{title}</h2>
+      <p className="uppercase text-brand">
+        {status === "fresh"
+          ? "Just kicked off"
+          : status === "since"
+          ? //@ts-ignore
+            `Launched in ${format(date, "LLLL yyyy")}`
+          : "Under construction"}
+      </p>
+      <div className="flex flex-wrap items-center justify-center gap-4">
+        {tech.map((x, i) => (
+          <div className="flex items-center gap-1" key={i}>
+            {icons[x]} <p className="font-bold text-sm">{x}</p>
+          </div>
+        ))}
+      </div>
+      <p className="text-center">{desc}</p>
+      <div className="flex items-center justify-between">
+        <button className="px-4 py-2 rounded-lg bg-brand hover:bg-opacity-80">
+          {href.replace("https://", "").length > 24
+            ? `${href.replace("https://", "").slice(0, 24)}...`
+            : href.replace("https://", "")}
+        </button>
+        {source && (
+          <button className="px-4 py-2 rounded-lg bg-brand hover:bg-opacity-80">
+            Source
+          </button>
+        )}
+      </div>
+    </div>
   );
 }

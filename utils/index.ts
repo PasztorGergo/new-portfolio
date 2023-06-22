@@ -1,11 +1,24 @@
 import { Variants } from "framer-motion";
 
-const staggerContainer: Variants = {
+const staggerContainer: (delay?: number) => Variants = (delay?: number) => ({
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.3,
+      staggerChildren: delay || 0.3,
     },
+  },
+});
+
+const popUp: Variants = {
+  hidden: {
+    scale: 0,
+    opacity: 0,
+  },
+  show: {
+    scale: 1,
+    opacity: 1,
+    transformOrigin: "center",
+    transition: { type: "spring", damping: 15, stiffness: 120 },
   },
 };
 
@@ -25,8 +38,8 @@ const fadeIn: (
       opacity: 0,
     },
     show: {
-      x: 0,
-      y: 0,
+      x: "0rem",
+      y: "0rem",
       opacity: 1,
       transition: {
         damping,
@@ -61,4 +74,4 @@ const typing: Variants = {
   },
 };
 
-export { staggerContainer, fadeIn, typingContainer, typing };
+export { staggerContainer, fadeIn, typingContainer, typing, popUp };
