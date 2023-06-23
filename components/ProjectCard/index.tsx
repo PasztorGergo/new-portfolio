@@ -106,15 +106,21 @@ export default function ProjectCard({
       </div>
       <p className="text-center">{desc}</p>
       <div className="flex items-center justify-between">
-        <button className="px-4 py-2 rounded-lg bg-brand hover:bg-opacity-80">
+        <a
+          href={href}
+          className="px-4 py-2 rounded-lg bg-brand hover:bg-opacity-80"
+        >
           {href.replace("https://", "").length > 24
             ? `${href.replace("https://", "").slice(0, 24)}...`
             : href.replace("https://", "")}
-        </button>
+        </a>
         {source && (
-          <button className="px-4 py-2 rounded-lg bg-brand hover:bg-opacity-80">
+          <a
+            href={source}
+            className="px-4 py-2 rounded-lg bg-brand hover:bg-opacity-80"
+          >
             Source
-          </button>
+          </a>
         )}
       </div>
     </div>

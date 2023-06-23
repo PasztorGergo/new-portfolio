@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <nav
       className={`w-full bg-[#1c1d22] py-4 px-16 flex flex-row justify-between items-center ${
-        scrollPos > 30 ? "fixed" : "absolute"
+        window.scrollY > 30 ? "fixed" : "absolute"
       } z-30 top-0 left-0`}
     >
       <Image alt="Logo" src="/favicon.svg" width={50.41} height={50.25} />
@@ -35,18 +35,21 @@ export default function Navbar() {
           About
         </li>
         <li
-          onClick={() => window?.scrollTo({ top: 1200, behavior: "smooth" })}
+          onClick={() => window?.scrollTo({ top: 1300, behavior: "smooth" })}
           className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
         >
           Skills
         </li>
         <li
-          onClick={() => window?.scrollTo({ top: 1750, behavior: "smooth" })}
+          onClick={() => window?.scrollTo({ top: 1850, behavior: "smooth" })}
           className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
         >
           Projects
         </li>
-        <li className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm">
+        <li
+          onClick={() => window?.scrollTo({ top: 3500, behavior: "smooth" })}
+          className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
+        >
           Testimonails
         </li>
       </ul>
@@ -104,7 +107,7 @@ export default function Navbar() {
                 className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
                 onClick={() => {
                   setOpen(false);
-                  window?.scrollTo({ top: 1200, behavior: "smooth" });
+                  window?.scrollTo({ top: 1300, behavior: "smooth" });
                 }}
               >
                 Skills
@@ -114,7 +117,7 @@ export default function Navbar() {
                 className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
                 onClick={() => {
                   setOpen(false);
-                  window?.scrollTo({ top: 1750, behavior: "smooth" });
+                  window?.scrollTo({ top: 1850, behavior: "smooth" });
                 }}
               >
                 Projects
@@ -124,7 +127,7 @@ export default function Navbar() {
                 className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
                 onClick={() => {
                   setOpen(false);
-                  window?.scrollTo({ top: 2300, behavior: "smooth" });
+                  window?.scrollTo({ top: 3500, behavior: "smooth" });
                 }}
               >
                 Testimonials

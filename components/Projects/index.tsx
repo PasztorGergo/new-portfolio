@@ -102,8 +102,9 @@ export default function Projects() {
       >
         {projects.slice(0, 3).map((props) => (
           <motion.div
-            viewport={{ once: false, amount: 0.25 }}
+            viewport={{ once: false }}
             variants={fadeIn("up", 12, 60)}
+            initial="hidden"
             whileInView="show"
             key={props.title}
           >
@@ -118,8 +119,9 @@ export default function Projects() {
       >
         {projects.slice(3).map((props) => (
           <motion.div
-            viewport={{ once: false, amount: 0.25 }}
+            viewport={{ once: false }}
             variants={fadeIn("up", 12, 60)}
+            initial="hidden"
             whileInView="show"
             key={props.title}
           >

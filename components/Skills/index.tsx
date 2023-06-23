@@ -28,6 +28,7 @@ import { popUp, staggerContainer } from "utils";
 
 const skills: Array<{ name: string; icon: any }> = [
   { name: "HTML 5", icon: <DiHtml5 className="fill-[#F16529]" /> },
+  { name: "CSS 3", icon: <DiCss3 className="fill-[#2965f1]" /> },
   { name: "Sass", icon: <DiSass className="fill-[#c69]" /> },
   {
     name: "Tailwind CSS",
@@ -41,13 +42,12 @@ const skills: Array<{ name: string; icon: any }> = [
     name: "TypeScript",
     icon: <SiTypescript className="fill-[#3178c6]" />,
   },
-  { name: "CSS 3", icon: <DiCss3 className="fill-[#2965f1]" /> },
   { name: "React", icon: <DiReact className="fill-[#61DBFB]" /> },
+  { name: "NextJS", icon: <SiNextdotjs className="fill-white" /> },
   {
     name: "Firebase",
     icon: <SiFirebase className="fill-[#ffcb2f]" />,
   },
-  { name: "NextJS", icon: <SiNextdotjs className="fill-white" /> },
   {
     name: "GraphQL",
     icon: <SiGraphql className="fill-[#e535ab]" />,
@@ -86,7 +86,7 @@ export default function Skills() {
           <motion.div
             key={skill.name}
             variants={popUp}
-            className="flex flex-col w-32 h-32 text-[clamp(32px,10vw,3rem)] items-center justify-between bg-white bg-opacity-[0.18] shadow-[0_8px_32px_0_#00B25A2d] border border-white border-opacity-[0.19] backdrop-blur p-4 rounded-lg"
+            className="flex flex-col w-32 h-32 text-[clamp(32px,10vw,3rem)] items-center justify-between bg-white bg-opacity-[0.18] border border-white border-opacity-[0.19] backdrop-blur p-4 rounded-lg"
           >
             {skill.icon}
             <h3 className="uppercase text-base font-bold text-center text-white text-opacity-80">
