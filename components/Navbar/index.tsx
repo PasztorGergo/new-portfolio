@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`w-full bg-[#1c1d22] py-4 px-16 flex flex-row justify-between items-center ${
+      className={`w-full bg-[#1c1d22] py-4 px-4 md:px-16 flex flex-row justify-between items-center ${
         scrollPos > 30 ? "fixed" : "absolute"
       } z-30 top-0 left-0`}
     >

@@ -65,7 +65,7 @@ export default function Testimonials() {
     },
   ]);
   return (
-    <section className="my-16 mx-auto">
+    <section className="mt-16 mb-32 mx-auto">
       <SectionTitle>Testimonials</SectionTitle>
       <p>See what other say about me!</p>
       <div className="w-full mt-24">
