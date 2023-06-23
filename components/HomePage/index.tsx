@@ -4,7 +4,7 @@ import { About, Hero, Projects, Skills, Testimonials } from "../../components";
 
 const HomePage = () => {
   return (
-    <div className="md:py-12 md:px-28 p-4 m-0 min-h-screen overflow-x-hidden">
+    <div className="md:py-12 md:px-28 p-4 m-0 w-full min-h-screen overflow-x-hidden">
       <Hero />
       <About />
       <Skills />
