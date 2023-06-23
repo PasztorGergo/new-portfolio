@@ -1,6 +1,5 @@
 "use client";
-import React from "react";
-import { useWindowScroll } from "@mantine/hooks";
+import React, { useEffect, useState } from "react";
 
 type Props = {
   children: React.ReactNode;
@@ -9,13 +8,18 @@ type Props = {
 };
 
 export default function Anchor({ children, href, className }: Props) {
-  const [scrollPos, scrollTo] = useWindowScroll();
+  const [scrollPos, setScrollPos] = useState<number>(0);
+
+  useEffect(() => {
+    setScrollPos(window.scrollY);
+    window.onscroll = () => setScrollPos(window.scrollY);
+  }, []);
 
   return typeof href === "number" ? (
     <a
       className={`${className} cursor-pointer text-brand text-opacity-75 hover:text-opacity-100 hover:shadow-[0_-3px_0_0_#00B25A_inset] shadow-[0_0_0_0_#00B25A_inset]`}
       onClick={() => {
-        scrollTo({ y: href });
+        scrollTo({ top: href, behavior: "smooth" });
       }}
     >
       {children}
