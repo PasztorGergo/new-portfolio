@@ -5,6 +5,7 @@ import Anchor from "../Anchor";
 import SectionTitle from "../SectionTitle";
 import Image from "next/image";
 import { fadeIn, staggerContainer } from "utils";
+import { RiMailLine, RiTwitterLine, RiLinkedinLine } from "react-icons/ri";
 
 export default function About() {
   return (
@@ -19,33 +20,49 @@ export default function About() {
           viewport={{ once: false }}
         >
           <motion.p variants={fadeIn("up", 12, 60)}>
-            My name is <strong>Gergő</strong> Pásztor a full-stack web developer
+            My name is <strong>Gergő Pásztor</strong> a full-stack web developer
             from Hungary.
           </motion.p>
           <motion.p variants={fadeIn("up", 12, 60)}>
             In my second year at Pattantyús-Ábrahám Géza Technical Secondary
-            School, I built my first-ever website. It was the{" "}
-            <strong>moment</strong> that changed my perspective and{" "}
-            <strong>incentivized</strong> me to go deeper into this hole.
+            School, I built my first-ever website. It was the moment that
+            changed my perspective and <strong>incentivized</strong> me to go
+            deeper into this hole.
           </motion.p>
           <motion.p variants={fadeIn("up", 12, 60)}>
-            <strong>2022</strong> was the year that extremely affected me. I
-            built <strong>relationships</strong> with people on Twitter and
-            completed my first{" "}
-            <Anchor href="https://villamostechnikai-gyujtemeny.vercel.app/">
-              freelance work
-            </Anchor>
-            .
+            Throught the years, I development my intrapersonal skills to get
+            accustomed to challenges. So if you are looking for someone with the{" "}
+            <Anchor href={1300}>skills</Anchor> below, and who is a persistent
+            coffee and code enthusiast, it is time to conncet! 😉{" "}
           </motion.p>
-          <motion.p variants={fadeIn("up", 12, 60)}>
-            Experiences like these made me build side projects and get in touch
-            with other creators.
-          </motion.p>
-          <motion.p variants={fadeIn("up", 12, 60)}>
-            If reading all of these got your attention, check out my{" "}
-            <Anchor href={1000}>work</Anchor> below, and be the next one with
-            who I will collaborate.
-          </motion.p>
+          <motion.ul
+            className="flex items-center justify-center gap-8 mt-8 w-full"
+            variants={staggerContainer()}
+            initial="hidden"
+            whileInView="show"
+          >
+            <motion.li className="group" variants={fadeIn("up", 12, 60)}>
+              <a href="mailto:pasztor05@gmail.com" className=" text-[32px]">
+                <RiMailLine className="group-hover:fill-brand fill-white transition-colors" />
+              </a>
+            </motion.li>
+            <motion.li className="group" variants={fadeIn("up", 12, 60)}>
+              <a
+                href="https://twitter.com/G3rgoPasztor"
+                className=" text-[32px]"
+              >
+                <RiTwitterLine className="group-hover:fill-brand fill-white transition-colors" />
+              </a>
+            </motion.li>
+            <motion.li className="group" variants={fadeIn("up", 12, 60)}>
+              <a
+                href="https://www.linkedin.com/in/gerg%C5%91-p%C3%A1sztor-a0aa41214/"
+                className=" text-[32px]"
+              >
+                <RiLinkedinLine className="group-hover:fill-brand fill-white transition-colors" />
+              </a>
+            </motion.li>
+          </motion.ul>
         </motion.div>
         <motion.div
           variants={fadeIn("right", 12, 60)}
