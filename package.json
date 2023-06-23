@@ -9,9 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mantine/core": "^4.2.12",
-    "@mantine/hooks": "^4.2.12",
-    "@mantine/next": "^4.2.12",
     "@next/font": "^13.1.6",
     "date-fns": "^2.28.0",
     "framer-motion": "^9.0.2",

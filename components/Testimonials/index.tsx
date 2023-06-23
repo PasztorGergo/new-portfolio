@@ -1,16 +1,9 @@
 "use client";
 
-import { Box, createStyles, Text } from "@mantine/core";
 import React, { useState } from "react";
 import SectionTitle from "../SectionTitle";
 import TestimonialCard from "../TestimonialCard";
 import { AnimatePresence, motion } from "framer-motion";
-
-const useStyles = createStyles((theme) => ({
-  section: {
-    margin: "4rem auto",
-  },
-}));
 
 type testimonial = {
   profilePicture: string;
@@ -29,9 +22,9 @@ export default function Testimonials() {
       profilePicture: "",
       children: (
         <>
-          <Text align="center">
+          <p className="text-center">
             Be the next satisfied person, with who I will collaborate! 😉
-          </Text>
+          </p>
         </>
       ),
     },
@@ -42,14 +35,12 @@ export default function Testimonials() {
       role: "CEO of Electrotechnical Collection, Hungary",
       children: (
         <>
-          <Text align="center">
+          <p className="text-center">
             I must confess, He did a fantastic work!
             <br />
             I&apos;m keen on with the design, and the layout is outstanding.
-          </Text>{" "}
-          <Text align="center" weight="600">
-            I love it!
-          </Text>
+          </p>{" "}
+          <p className="text-center font-bold">I love it!</p>
         </>
       ),
     },
@@ -60,33 +51,27 @@ export default function Testimonials() {
       role: "Software Engineer, Twitter Creator",
       children: (
         <>
-          <Text align="center" sx={{ maxWidth: "32rem" }}>
+          <p className="text-center max-w-[32rem]">
             Gergő&apos;s article for my blog was fantastic. The writing style
             was engaging, the content was well-researched and informative, and
             the overall quality was professional.
-          </Text>
-          <Text align="center" sx={{ maxWidth: "32rem" }}>
+          </p>
+          <p className="text-center max-w-[32rem]">
             I would highly recommend Gergő as a writer and I look forward to
             working with him again in the future.
-          </Text>
+          </p>
         </>
       ),
     },
   ]);
-  const { classes } = useStyles();
   return (
-    <section className={classes.section}>
+    <section className="my-16 mx-auto">
       <SectionTitle>Testimonials</SectionTitle>
-      <Text>See what other say about me!</Text>
-      <Box
-        sx={{
-          width: "100%",
-          marginTop: "6rem",
-        }}
-      >
-        <Text weight="600" size="xl" color="dimmed" align="center">
+      <p>See what other say about me!</p>
+      <div className="w-full mt-24">
+        <p className="font-bold text-xl opacity-50 text-center">
           Drag me horizontally ↔
-        </Text>
+        </p>
         <motion.div
           style={{
             display: "flex",
@@ -129,7 +114,7 @@ export default function Testimonials() {
             )}
           </AnimatePresence>
         </motion.div>
-      </Box>
+      </div>
     </section>
   );
 }

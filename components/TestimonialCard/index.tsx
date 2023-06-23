@@ -1,25 +1,8 @@
 "use client";
 
-import { Avatar, createStyles, Paper, Stack, Title, Text } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
 import React from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
-
-const useStyles = createStyles((theme) => ({
-  paper: {
-    position: "relative",
-    background: "#25252a",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  avatar: {
-    position: "absolute",
-    top: "-2rem",
-    borderRadius: "50%",
-    objectFit: "cover",
-  },
-}));
+import { Avatar } from "components";
 
 type Props = {
   profilePicture: string;
@@ -52,9 +35,6 @@ export default function TestimonialCard({
   index,
   setIndex,
 }: Props) {
-  const { classes } = useStyles();
-  const breakpoint = useMediaQuery("(min-width: 808px)", false);
-
   const x = useMotionValue(0);
   const scale = useTransform(x, [-150, 0, 150], [0.5, 1, 0.5]);
 
@@ -103,34 +83,23 @@ export default function TestimonialCard({
           scale: scale,
         }}
       >
-        <Paper
-          className={classes.paper}
-          radius="sm"
-          p="xl"
-          sx={{ minWidth: breakpoint ? "40%" : "100%" }}
-        >
-          <Avatar
-            src={profilePicture}
-            component="a"
+        <div className="rounded-lg p-4 bg-[#25252a] md:min-w-[40%] min-w-full relative">
+          <a
             href={contact}
-            className={classes.avatar}
-            size={96}
-            color="dark"
-            alt={`Photo of ${name}`}
-            sx={{
-              padding: "0",
-            }}
-          />
-          <Stack pt="3rem">
-            <Title align="center" order={3}>
-              {name}
-            </Title>
-            <Text align="center" color="dimmed" size="sm">
-              {role}
-            </Text>
+            className="absolute left-0 -top-8 w-full flex items-center justify-center"
+          >
+            <Avatar
+              alt={`Photo of ${name}`}
+              className="w-24 h-24"
+              src={profilePicture}
+            />
+          </a>
+          <div className="pt-16 flex flex-col items-center justify-between gap-4">
+            <h3 className="text-center font-bold text-xl">{name}</h3>
+            <p className="text-center opacity-50 text-sm">{role}</p>
             {children}
-          </Stack>
-        </Paper>
+          </div>
+        </div>
       </motion.div>
     </motion.div>
   );

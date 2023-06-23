@@ -12,12 +12,13 @@ export default function Navbar() {
 
   useEffect(() => {
     setScrollPos(window.scrollY);
+    window.onscroll = () => setScrollPos(window.scrollY);
   }, []);
 
   return (
     <nav
       className={`w-full bg-[#1c1d22] py-4 px-16 flex flex-row justify-between items-center ${
-        window.scrollY > 30 ? "fixed" : "absolute"
+        scrollPos > 30 ? "fixed" : "absolute"
       } z-30 top-0 left-0`}
     >
       <Image alt="Logo" src="/favicon.svg" width={50.41} height={50.25} />

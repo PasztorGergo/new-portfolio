@@ -10,7 +10,7 @@ const nunito = Nunito({ subsets: ["latin-ext", "latin"] });
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html className="text-white">
-      <body className={nunito.className}>
+      <body className={nunito.className + " overflow-x-hidden"}>
         <Header />
         {children}
         <Footer />

@@ -73,7 +73,7 @@ interface ParallaxProps {
 
 export default function Skills() {
   return (
-    <section>
+    <section className="z-[2]">
       <SectionTitle>Skills</SectionTitle>
       <motion.div
         variants={staggerContainer(0.075)}
