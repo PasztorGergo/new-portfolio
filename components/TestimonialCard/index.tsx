@@ -37,6 +37,7 @@ export default function TestimonialCard({
 }: Props) {
   const x = useMotionValue(0);
   const scale = useTransform(x, [-150, 0, 150], [0.5, 1, 0.5]);
+  const opacity = useTransform(x, [-150, 0, 150], [0.1, 1, 0.1]);
 
   const handleDrag = (event: any, info: any) => {
     if (info.offset.x < -100 && index) {
@@ -80,7 +81,8 @@ export default function TestimonialCard({
     >
       <motion.div
         style={{
-          scale: scale,
+          scale,
+          opacity,
         }}
       >
         <div className="rounded-lg p-4 bg-[#25252a] md:min-w-[40%] min-w-full relative">
