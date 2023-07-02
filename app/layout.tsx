@@ -9,7 +9,7 @@ const nunito = Nunito({ subsets: ["latin-ext", "latin"] });
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html className="text-white">
+    <html className="text-white" lang="en-US">
       <body
         className={
           nunito.className +

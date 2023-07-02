@@ -42,7 +42,11 @@ export default function About() {
             whileInView="show"
           >
             <motion.li className="group" variants={fadeIn("up", 12, 60)}>
-              <a href="mailto:pasztor05@gmail.com" className=" text-[32px]">
+              <a
+                href="mailto:pasztor05@gmail.com"
+                className=" text-[32px]"
+                aria-label="Send me a mail"
+              >
                 <RiMailLine className="group-hover:fill-brand fill-white transition-colors" />
               </a>
             </motion.li>
@@ -50,6 +54,7 @@ export default function About() {
               <a
                 href="https://twitter.com/G3rgoPasztor"
                 className=" text-[32px]"
+                aria-label="View my Twitter profile"
               >
                 <RiTwitterLine className="group-hover:fill-brand fill-white transition-colors" />
               </a>
@@ -58,6 +63,7 @@ export default function About() {
               <a
                 href="https://www.linkedin.com/in/gerg%C5%91-p%C3%A1sztor-a0aa41214/"
                 className=" text-[32px]"
+                aria-label="View my LinkedIn profile"
               >
                 <RiLinkedinLine className="group-hover:fill-brand fill-white transition-colors" />
               </a>
