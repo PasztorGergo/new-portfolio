@@ -30,7 +30,7 @@ export default function About() {
             deeper into this hole.
           </motion.p>
           <motion.p variants={fadeIn("up", 12, 60)}>
-            Throught the years, I development my intrapersonal skills to get
+            Throught the years, I developed my intrapersonal skills to get
             accustomed to challenges. So if you are looking for someone with the{" "}
             <Anchor href={1300}>skills</Anchor> below, and who is a persistent
             coffee and code enthusiast, it is time to conncet! 😉{" "}
