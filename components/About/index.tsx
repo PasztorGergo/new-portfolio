@@ -9,7 +9,7 @@ import { RiMailLine, RiTwitterLine, RiLinkedinLine } from "react-icons/ri";
 
 export default function About() {
   return (
-    <header>
+    <section className="">
       <SectionTitle>About</SectionTitle>
       <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
         <motion.div
@@ -86,6 +86,6 @@ export default function About() {
           />
         </motion.div>
       </div>
-    </header>
+    </section>
   );
 }
