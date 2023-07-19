@@ -12,4 +12,8 @@ it("test for the portfolio page", () => {
     .get("h2")
     .contains(/about/i)
     .should("be.visible");
+  cy.get("a")
+    .contains(/pract-o-music.vercel.app/i)
+    .click({ force: true })
+    .url();
 });
