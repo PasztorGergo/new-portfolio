@@ -13,6 +13,9 @@ import {
   SiFirebase,
   SiWordpress,
   SiGraphql,
+  SiJest,
+  SiTestinglibrary,
+  SiCypress,
 } from "react-icons/si";
 import {
   motion,
@@ -65,11 +68,19 @@ const skills: Array<{ name: string; icon: any }> = [
     name: "MongoDB",
     icon: <DiMongodb className="fill-[#00ed64]" />,
   },
+  {
+    name: "Jest",
+    icon: <SiJest className="fill-[hsl(336,24%,42%)]" />,
+  },
+  {
+    name: "Testing Library",
+    icon: <SiTestinglibrary className="fill-[#f1719e]" />,
+  },
+  {
+    name: "Cypress",
+    icon: <SiCypress className="fill-white" />,
+  },
 ];
-
-interface ParallaxProps {
-  baseVelocity: number;
-}
 
 export default function Skills() {
   return (
