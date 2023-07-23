@@ -8,6 +8,9 @@ const nextConfig = {
       { loader: "@next/font/google", options: { subsets: ["latin"] } },
     ],
   },
+  env: {
+    HASHNODE_KEY: process.env.HASHNODE_KEY,
+  },
 };
 
 module.exports = nextConfig;

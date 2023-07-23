@@ -77,6 +77,7 @@ export default function ProjectCard({
 }: Props) {
   return (
     <div
+      data-test="project-card"
       className={`bg-[hsl(230,10%,22%)] rounded-3xl p-4 flex flex-col items-center gap-4 justify-between ${
         highLight ? "0px 0px 1rem -0.5rem #00B25A" : "none"
       }`}

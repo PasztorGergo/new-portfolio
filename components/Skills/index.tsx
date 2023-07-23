@@ -95,6 +95,7 @@ export default function Skills() {
       >
         {skills.map((skill) => (
           <motion.div
+            data-test="skill-card"
             key={skill.name}
             variants={popUp}
             className="flex flex-col w-32 h-32 text-[clamp(32px,10vw,3rem)] items-center justify-between bg-white bg-opacity-[0.18] border border-white border-opacity-[0.19] backdrop-blur p-4 rounded-lg"
