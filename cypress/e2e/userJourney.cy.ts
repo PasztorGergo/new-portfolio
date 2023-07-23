@@ -14,4 +14,12 @@ describe("User journey", () => {
   it("shows all skills", () => {
     cy.get("[data-test='skill-card']").should("have.length", 17);
   });
+  it("navigates to the correct website linked to the project", () => {
+    cy.get("[data-test='project-card']").each(($card) => {
+      cy.wrap($card)
+        .get("[data-test='project-card'] a")
+        .click({ multiple: true, force: true });
+      cy.visit("http://localhost:3000");
+    });
+  });
 });
