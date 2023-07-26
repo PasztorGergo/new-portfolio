@@ -22,4 +22,35 @@ describe("User journey", () => {
       cy.visit("http://localhost:3000");
     });
   });
+  it.only("navigates to the correct blog post", () => {
+    cy.request("POST", "https://api.hashnode.com", {
+      query: `
+        {
+          user(username: "G3rgoPasztor") {
+            publication {
+              posts(page: 0) {
+               slug
+               title
+               brief
+               coverImage
+              }
+            }
+          }
+        }`,
+    }).then((res) => {
+      const { data } = res.body;
+
+      data.user.publication.posts.forEach(
+        (post: {
+          slug: string;
+          coverImage: string;
+          title: string;
+          brief: string;
+        }) => {
+          cy.get(`[data-test='${post.slug}']`).click();
+          cy.location("pathname").should("eq", post.slug);
+        }
+      );
+    });
+  });
 });

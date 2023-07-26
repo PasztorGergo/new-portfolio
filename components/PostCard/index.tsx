@@ -21,6 +21,7 @@ const PostCard = ({ brief, coverImage, slug, title }: Post) => {
       <h3 className="text-white font-bold text-center text-2xl">{title}</h3>
       <p className="text-white text-opacity-75 text-center">{brief}</p>
       <a
+        data-test={slug}
         className="px-4 py-2 rounded-lg bg-brand text-white uppercase text-sm text-center font-bold hover:bg-opacity-80"
         href={`https://gergopasztor.hashnode.dev/${slug}`}
       >
