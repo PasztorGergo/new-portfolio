@@ -12,6 +12,7 @@ const Home = () => {
       <About />
       <Skills />
       <Projects />
+      {/*@ts-ignore*/}
       <Blog />
       <Testimonials />
     </>
