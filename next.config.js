@@ -11,6 +11,9 @@ const nextConfig = {
   env: {
     HASHNODE_KEY: process.env.HASHNODE_KEY,
   },
+  images: {
+    domains: ["cdn.hashnode.com"],
+  },
 };
 
 module.exports = nextConfig;

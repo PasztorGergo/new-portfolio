@@ -38,23 +38,21 @@ const Blog = async () => {
     coverImage: string;
   }> = await getFeaturedPosts();
 
-  console.log(posts);
-
   return (
     <section className="md:mt-64 mt-16 flex flex-col items-center justify-center gap-8">
       <SectionTitle className="self-start">Blog</SectionTitle>
       <h3 className="text-white text-center">
-        I'm sharing my experience in web development and helping others master
-        it
+        Helping you to be a master of web development by sharing my experience
+        along my journey
       </h3>
       {posts.length > 0 ? (
-        posts.map(({ title }) => <PostCard />)
+        posts.map((post) => <PostCard key={post.slug} {...post} />)
       ) : (
         <>
           <p>Get notified of my newest article</p>
           <button
             type="submit"
-            className="bg-brand p-3 hover:mix-blend-screen text-white font-bold text-sm uppercase rounded-lg overflow-hidden"
+            className="bg-brand px-4 py-2 hover:bg-opacity-80 text-white font-bold text-sm uppercase rounded-lg overflow-hidden"
           >
             <a
               href="https://gergopasztor.hashnode.dev/newsletter"
