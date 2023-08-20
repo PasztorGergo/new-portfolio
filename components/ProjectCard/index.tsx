@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { AiOutlineLink } from "react-icons/ai";
 import Image from "next/image";
 
 import { DiHtml5, DiCss3, DiSass, DiReact, DiMongodb } from "react-icons/di";
@@ -15,6 +14,7 @@ import {
   SiGithub,
   SiGraphql,
   SiWordpress,
+  SiSupabase,
 } from "react-icons/si";
 import { format } from "date-fns";
 
@@ -33,6 +33,7 @@ const icons = {
   Csharp: <SiCsharp size={20} key="CSharp" />,
   GraphQL: <SiGraphql size={20} key="GraphQL" />,
   WordPress: <SiWordpress size={20} key="WordPress" />,
+  Supabase: <SiSupabase size={20} key="Supabase" />,
 };
 
 type Props = {
@@ -54,6 +55,7 @@ type Props = {
     | "Csharp"
     | "GraphQL"
     | "WordPress"
+    | "Supabase"
   >;
   href: string;
   img: string;

@@ -25,6 +25,7 @@ const projects: Array<{
     | "Csharp"
     | "GraphQL"
     | "WordPress"
+    | "Supabase"
   >;
   href: string;
   img: string;
@@ -34,6 +35,17 @@ const projects: Array<{
   alt: string;
 }> = [
   {
+    title: "Habichain",
+    status: "wip",
+    date: new Date(2023, 7, 2),
+    tech: ["Tailwind", "TypeScript", "React", "Next", "Supabase"],
+    href: "https://habichain.com",
+    img: "/project/habichain.png",
+    desc: "Unlock your potential and make habit building a game based on a scientifically proven way.",
+    alt: "Habichain",
+    highLight: true,
+  },
+  {
     img: "/project/practomusicCover.png",
     title: "Pract-o-music",
     desc: "Add your favorite songs from YouTube or import them from you device and play them everywhere with Pract-o-music!",
@@ -41,7 +53,6 @@ const projects: Array<{
     href: "https://pract-o-music.vercel.app",
     status: "fresh",
     alt: "Pract-o-music",
-    highLight: true,
   },
   {
     img: "/project/Gradicol.webp",
