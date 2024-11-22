@@ -30,25 +30,25 @@ export default function Navbar() {
           Home
         </li>
         <li
-          onClick={() => window?.scrollTo({ top: 600, behavior: "smooth" })}
+          onClick={() => window?.scrollTo({ top: 775, behavior: "smooth" })}
           className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
         >
           About
         </li>
         <li
-          onClick={() => window?.scrollTo({ top: 1300, behavior: "smooth" })}
+          onClick={() => window?.scrollTo({ top: 1450, behavior: "smooth" })}
           className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
         >
           Skills
         </li>
         <li
-          onClick={() => window?.scrollTo({ top: 1850, behavior: "smooth" })}
+          onClick={() => window?.scrollTo({ top: 2000, behavior: "smooth" })}
           className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
         >
           Projects
         </li>
         <li
-          onClick={() => window?.scrollTo({ top: 3500, behavior: "smooth" })}
+          onClick={() => window?.scrollTo({ top: 4500, behavior: "smooth" })}
           className="uppercase tracking-wide text-center font-bold hover:border-b-2 border-b-brand border-0 text-opacity-75 hover:text-opacity-100 cursor-pointer transition-all duration-100 text-sm"
         >
           Testimonails

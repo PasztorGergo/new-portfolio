@@ -35,6 +35,16 @@ const projects: Array<{
   alt: string;
 }> = [
   {
+    title: "Tech4Study",
+    status: "fresh",
+    tech: ["Tailwind", "JavaScript", "HTML"],
+    href: "https://www.tech4study.hu/",
+    img: "/project/tech4study.png",
+    desc: "The official website of Tech4Study technologycal event conducted by Eleqtroom.",
+    alt: "Tech4Study",
+    highLight: true,
+  },
+  {
     title: "Habichain",
     status: "wip",
     date: new Date(2023, 7, 2),
@@ -43,7 +53,7 @@ const projects: Array<{
     img: "/project/habichain.png",
     desc: "Unlock your potential and make habit building a game based on a scientifically proven way.",
     alt: "Habichain",
-    highLight: true,
+    highLight: false,
   },
   {
     img: "/project/practomusicCover.png",
@@ -51,8 +61,9 @@ const projects: Array<{
     desc: "Add your favorite songs from YouTube or import them from you device and play them everywhere with Pract-o-music!",
     tech: ["TypeScript", "Next", "React", "Tailwind"],
     href: "https://pract-o-music.vercel.app",
-    status: "fresh",
+    status: "since",
     alt: "Pract-o-music",
+    date: new Date(2023,10,1)
   },
   {
     img: "/project/Gradicol.webp",

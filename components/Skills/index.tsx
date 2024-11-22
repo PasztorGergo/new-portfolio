@@ -16,6 +16,9 @@ import {
   SiJest,
   SiTestinglibrary,
   SiCypress,
+  SiC,
+  SiPython,
+  SiArduino,
 } from "react-icons/si";
 import {
   motion,
@@ -26,7 +29,6 @@ import {
   useVelocity,
   useAnimationFrame,
 } from "framer-motion";
-import { wrap } from "@motionone/utils";
 import { popUp, staggerContainer } from "utils";
 
 const skills: Array<{ name: string; icon: any }> = [
@@ -65,10 +67,6 @@ const skills: Array<{ name: string; icon: any }> = [
     icon: <SiNodedotjs className="fill-[#68A063]" />,
   },
   {
-    name: "MongoDB",
-    icon: <DiMongodb className="fill-[#00ed64]" />,
-  },
-  {
     name: "Jest",
     icon: <SiJest className="fill-[hsl(336,24%,42%)]" />,
   },
@@ -79,6 +77,18 @@ const skills: Array<{ name: string; icon: any }> = [
   {
     name: "Cypress",
     icon: <SiCypress className="fill-white" />,
+  },
+  {
+    name: "Python",
+    icon: <SiPython className="fill-[#4584B6]" />,
+  },
+  {
+    name: "C/C++",
+    icon: <SiC className="fill-white" />,
+  },
+  {
+    name: "Arduino",
+    icon: <SiArduino className="fill-[#00878F]" />,
   },
 ];
 
